@@ -96,7 +96,7 @@
 **Flush RAM**
 - Clear RAM apps caches, kill all apps, and force stop all apps to get more free RAM before playing games.
   
-**Terminal Emulator/Termux command:**
+Terminal Emulator/Termux command:
 - `su -c flush` (Safe Mode) - kill all running apps in backround
 - `su -c flush2` (Aggressive Mode) - force stop all background & foreground 3rd party apps.        
 - `su -c flush3` (Extreme Mode) - force stop all backgrounds, foreground 3rd party, and system apps.
