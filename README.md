@@ -86,10 +86,10 @@
 - Dexopt is a system-internal tool that is used to produce optimized dex files by using `su -c cmd package bg-dexopt-job` code.
 
 **Double Wifi Bandwidth**
-- Double your bandwidth on your Redmi 7A devices.
+- Double wifi bandwidth on Redmi 7A devices.
 
 **Enable Force Fast Charging**
-- Enable force fast charging on your Redmi 7A devices.
+- Enable force fast charging on Redmi 7A devices.
 
 **Flush RAM**
 - Clear RAM apps caches, kill all apps, and force stop all apps to get more free RAM before playing games.
@@ -100,7 +100,7 @@ Terminal Emulator/Termux command:
 - `su -c flush3` (Extreme Mode) - force stop all backgrounds, foreground 3rd party, and system apps.
 
 **Touchscreen Improvement**
-- A tweaks for your fts_ts touchsreen for Redmi 7A devices.
+- A tweaks for fts_ts touchsreen on Redmi 7A devices.
 
 ## Credits:
 
