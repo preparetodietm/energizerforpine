@@ -9,9 +9,8 @@
 **FOR XIAOMI REDMI 7A (pine) DEVICES ONLY!**
 
 1. This module needs [Busybox for Android NDK](https://github.com/Magisk-Modules-Repo/busybox-ndk) in Magisk Manager or Brutal Busybox to worked on your Redmi 7A Phone.
-2. Flash [Fixes for Dexopt Everything](https://t.me/energizerforpine/1531) if this module takes up to 5 minutes to execute **Dexopt Everything** then reboot.
-3. If you put some _tweaks_ on your **system/build.prop** similar to the features of Energizer, remove them and restart your device before you flash.
-4. Do not install any _Magisk Module_ related to the **features of Energizer**.
+2. If you put some _tweaks_ on your **system/build.prop** similar to the features of Energizer, remove them and restart your device then install this module.
+3. Do not install any _Magisk Module_ related to the **features of Energizer**.
 
 ## Features:
 
