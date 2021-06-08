@@ -8,7 +8,7 @@
 
 **FOR XIAOMI REDMI 7A (pine) DEVICES ONLY!**
 
-1. This module needs [Busybox for Android NDK](https://github.com/Magisk-Modules-Repo/busybox-ndk) in Magisk Manager or Brutal Busybox to worked on your Redmi 7A Phone.
+1. This module needs [Busybox for Android NDK](https://github.com/Magisk-Modules-Repo/busybox-ndk) in Magisk Manager or [Brutal Busybox](https://github.com/feravolt/Brutal_busybox) to worked on your Redmi 7A Phone.
 2. If you put some _tweaks_ on your **system/build.prop** similar to the features of Energizer, remove them and restart your device then install this module.
 3. Do not install any _Magisk Module_ related to the **features of Energizer**.
 
