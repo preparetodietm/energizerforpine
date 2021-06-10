@@ -22,7 +22,7 @@
 ## Installation:
 
 1. Flash
-2. Select the desired options on the volume selector
+2. Select the desired options on the volume key selector
 3. Reboot
 4. Enjoy!
 
