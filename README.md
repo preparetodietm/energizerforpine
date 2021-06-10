@@ -70,6 +70,7 @@
 
 **Some Optimization Tweaks:**
 - 10bit Color Mode
+- Camera2API
 - Disable Quality Control
 - Graphics Tweaks
 - Kernel Tweaks
