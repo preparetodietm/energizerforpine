@@ -1,7 +1,0 @@
-id=dexopt-everything
-name=Dexopt Everything
-version=stable-version
-versionCode=10
-author=Lalice_21
-description=Dexopt is a system-internal tool that is used to produce optimized dex files by using su -c cmd package bg-dexopt-job code.
-dexopt-everything=3
