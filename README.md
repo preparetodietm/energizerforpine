@@ -1,5 +1,7 @@
 # Energizer for Redmi 7A
 
+## preparetodietm @ [energizerforpine](https://t.me/energizerforpine)
+
 ## What is Energizer?
 
 - **Energizer** is a collection of tweaks that can boost your ROM/GSI and picked the best magisk module for your Redmi 7A phone. 
