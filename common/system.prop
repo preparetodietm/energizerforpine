@@ -1,0 +1,345 @@
+#===============================================
+
+
+# Audio & Video Tweaks Properties
+
+# Better Call Voice Quality
+ro.ril.enable.amr.wideband=1
+
+# Improves Video Recording Quality
+ro.camcorder.videoModes=true
+
+# Media Enhancer [codecs]
+ro.media.capture.maxres=8m
+ro.media.dec.aud.flac.enabled=1
+ro.media.dec.aud.mp3.enabled=1
+ro.media.dec.aud.wma.enabled=1
+ro.media.dec.vid.avi.enabled=1
+ro.media.dec.vid.H.264.enabled=1
+ro.media.dec.vid.mp4.enabled=1
+ro.media.dec.vid.wmv.enabled=1
+ro.media.enc.aud.flac.enabled=1
+ro.media.enc.aud.mp3.enabled=1
+ro.media.enc.aud.wma.enabled=1
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.enc.hprof.vid.fps=65
+ro.media.enc.vid.H.264.enabled=1
+ro.media.enc.vid.mp4.enabled=1
+ro.media.enc.vid.wmv.enabled=1
+
+# Stream Videos Faster
+media.stagefright.enable-http=true
+media.stagefright.enable-meta=true
+media.stagefright.enable-player=true
+media.stagefright.enable-record=false
+media.stagefright.enable-rtsp=true
+media.stagefright.enable-scan=true
+
+# Video Acceleration Enabled
+video.accelerate.hw=1
+
+
+#===============================================
+
+
+# Battery Tweaks Properties
+
+# Smart Charging
+ro.build.smartcharging=1
+
+
+#===============================================
+
+
+# CPU, GPU, FPS and Game Tweaks Properties
+
+# Control Gaming FPS
+cpu.fps=auto
+gpu.fps=auto
+ro.fps_enable=1
+
+# CPU & GPU Tweaks
+ro.sys.cpu.maxfreq=auto
+ro.sys.cpu.minfreq=auto
+ro.sys.gpu.maxfreq=auto
+ro.sys.gpu.minfreq=auto
+
+# Disable Dynamic Refresh Rate
+ro.vendor.dfps.enable=false
+ro.vendor.smart_dfps.enable=false
+
+# Disable VSYNC for CPU Rendered Apps
+debug.cpurend.vsync=false
+sys.use_fifo_ui=1
+
+# Enable Game Colocation Feature
+sched.colocate.enable=1
+
+# FPS 
+persist.sys.NV_FPSLIMIT=70
+persist.sys.NV_POWERMODE=1
+persist.sys.NV_PROFVER=15
+persist.sys.NV_STEREOCTRL=0
+persist.sys.NV_STEREOSEP=20
+persist.sys.NV_STEREOSEPCHG=0
+
+# FPS Stabilizer
+debug.sf.showbackground=0
+debug.sf.showcpu=0
+debug.sf.showfps=0
+debug.sf.showupdates=0
+
+# FPS Tuner
+persist.sys.logsystem.neversend=0
+ro.config.clear_launcher_data=true
+ro.config.do_sdcard_upgrade=true
+ro.config.hisi_soc_type=true
+ro.config.hisi_rpt_mode=0
+ro.config.hw_dolby=true
+ro.config.hw_GSensorOptimize=true
+ro.config.hw_simpleui_enable=1
+ro.config.hw.logsystem.send=0 
+ro.config.hw.powerlogserve.send=0
+ro.config.lowBatteryUpgrade=true
+ro.config.performanceMode=true
+
+# Game Mode for CPU
+ro.cpufreq.game=1
+
+# Improve Gaming Experience
+debug.composition.type=c2d
+debug.egl.hw=1
+debug.egl.swapinterval=-90
+debug.enabletr=true
+debug.gr.numframebuffers=3
+debug.gr.swapinterval=1
+debug.hwui.renderer=opengl
+debug.overlayui.enable=1
+debug.performance.tuning=1
+debug.qctwa.preservebuf=1
+debug.sf.hw=1
+dev.pm.dyn_samplingrate=1
+force_hw_ui=false
+hw2d.force=1
+hw3d.force=1
+persist.metadata_dynfps.disable=1
+persist.sampling_profiler=0
+persist.sys.composition.type=c2d
+persist.sys.debug.gr.swapinterval=1
+persist.sys.egl.swapinterval=1
+persist.sys.purgeable_assets=1
+persist.sys.ui.hw=1
+ro.config.disable.hw_accel=false
+ro.config.hw_quickpoweron=true
+ro.fb.mode=1
+ro.media.cam.preview.fps=0
+ro.media.codec_priority_for_thumb=so
+ro.min_pointer_dur=1
+ro.sf.compbypass.enable=0
+ro.vold.umsdirtyratio=20
+sf.debug.enable2D=1
+sf.debug.enable3D=1
+sys.hwc.gpu_perf_mode=1
+vendor.debug.egl.swapinterval=1
+vendor.debug.gr.swapinterval=1
+
+# Surface Flinger
+ro.surface_flinger.has_HDR_display=false
+ro.surface_flinger.has_wide_color_display=false
+ro.surface_flinger.running_without_sync_framework=true
+tweaks.smooth.brightness=0
+vendor.perf.gestureflingboost.enable=true
+vendor.perf.iop_v3.enable=true
+vendor.perf.performancemode.support=1
+
+# System FPS
+dalvik.vm.execution-mode=int:jit 
+debug.hwui.gpurender=Adreno (TM) 505
+debug.sdm.support_writeback=0
+persist.sys.dalvik.hyperthreading=true
+persist.sys.dalvik.multithread=true
+persist.sys.strictmode.visual=0
+ro.display.switch=1
+ro.hwissoris.splitwindow.support_all=true
+
+
+#===============================================
+
+
+# Internet and Network Signal Tweaks Properties
+
+# Better Internet Speed
+net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.evdo_b=6144,87380,1048576,6144,87380,1048576
+net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.hsdpa=6144,87380,1048576,6144,87380,1048576
+net.tcp.buffersize.hspa=6144,87380,524288,6144,16384,262144
+net.tcp.buffersize.lte=524288,1048576,2097152,524288,1048576,2097152
+net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960
+
+# Better Network Signals
+persist.cust.tel.eons=1
+ro.config.hw_fast_dormancy=1 
+
+# Boost Signal
+bt.max.hfpclient.connections=1
+
+# Signal Performance
+net.tethering.noprovisioning=true
+persist.fuse_sdcard=true
+persist.radio.no_wait_for_card=1
+persist.sys.dun.override=0
+persist.sys.storage_preload=1
+ro.storage_manager.enabled=true
+ro.tether.denied=false
+ro.wifi.hotspotUI=1
+
+
+#===============================================
+
+
+# RAM Management and Multitasking Tweaks Properties
+
+# Better RAM Management
+ro.config.dha_cached_max=20
+ro.config.dha_empty_init=42
+ro.config.dha_empty_max=42
+ro.config.dha_lmk_scale=0.272
+ro.config.dha_tunnable=1
+ro.config.fha_enable=true
+
+# Disable memplus prefetcher which ram-boost relying on, use traditional swapping
+persist.vendor.sys.memplus.enable=false
+
+# Free More RAM
+dalvik.vm.dexopt-flags=v=n,o=v
+dalvik.vm.verify-bytecode = false
+persist.sys.purgeable_assets=1
+ro.setupwizard.enable_bypass=1
+
+# Remain Launcher
+ro.HOME_APP_ADJ=1 
+
+
+#===============================================
+
+
+# Some Optimization Tweaks Properties
+
+# 10bit Color Mode
+vendor.display.enable_default_color_mode=0
+
+# Better Flashlight Intensity & Camera Flash Quality
+ro.media.capture.flash=led
+ro.media.capture.flashIntensity=70
+ro.media.capture.flashMinV=3300000
+ro.media.capture.torchIntensity=65
+
+# Camera2API
+persist.camera.HAL3.enabled=1
+
+# Dexopt Everything
+pm.dexopt.bg-dexopt everything
+pm.dexopt.core-app everything
+pm.dexopt.forced-dexopt everything
+pm.dexopt.install everything
+pm.dexopt.nsys-library everything
+pm.dexopt.shared-apk everything
+# Thanks to @Lalice_21
+
+# Disable Quality Control
+persist.radio.oem_socket=false
+
+# Graphics Tweaks
+debug.gralloc.gfx_ubwc_disable=0
+debug.sf.disable_backpressure=1
+debug.sf.enable_hwc_vds=1
+debug.sf.high_fps_early_gl_phase_offset_ns=9000000
+debug.sf.high_fps_early_phase_offset_ns=6100000
+persist.hwc.enable_vds=1
+persist.sys.force_sw_gles=1
+
+# Kernel Tweaks 
+logd.kernel=true
+persist.logd.kernel=true
+persist.logd.size=1024k
+
+# Optimization Tweaks
+config.disable_consumerir=true
+persist.sys.cabc.enable=0
+persist.sys.primarysd=0
+ro.am.reschedule_service=true
+ro.config.max_starting_bg=4
+ro.service.cabc.supported=false
+
+# Performance Tweaks
+persist.mm.sta.enable=0
+persist.preload.common=1
+persist.sys.autoclearsave=3
+persist.zygote.preload_threads=3
+ro.zygote.preload.disable=1
+ro.zygote.preload.enable=0
+
+# Phone Call Ring Faster
+ro.telephony.call_ring.delay=800
+
+# Picture Quality Enhancer
+ro.media.dec.jpeg.memcap=8000000
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.enc.jpeg.quality=100
+
+# Qualcomm Tweaks
+com.qc.hardware=1
+debug.qc.hardware=true
+debug.qctwa.preservebuf=1
+debug.qctwa.statusbar=1
+persist.radio.apm_sim_not_pwdn=0
+ro.adb.qemud=0
+ro.enable_boot_charger_mode=false
+ro.kernel.qemu=0
+ro.qc.sdk.camera.facialproc=false
+ro.qc.sdk.gestures.camera=false
+ro.qc.sdk.sensors.gestures=true 
+ro.qc.sensors.step_counter=false 
+ro.qti.sensors.facing=false
+ro.qti.sensors.pedometer=false
+ro.qti.sensors.pick_up=false
+ro.qti.sensors.step_counter=false
+ro.qti.sensors.step_detector=false
+ro.qualcomm.sensors.game_rv=false 
+ro.qualcomm.sensors.georv=true
+ro.qualcomm.sensors.pam=false
+ro.qualcomm.sensors.scrn_ortn=true
+ro.qualcomm.sensors.smd=false
+sys.boot_from_charger_mode=0
+
+# Sdcard Speed Tweaks
+echo "2048" > /sys/devices/virtual/bdi/179:0/read_ahead_kb(Class 4 And Above)
+echo "512" > /sys/devices/virtual/bdi/179:0/read_ahead_kb(Class 3 And Lower)
+
+# Smoothens UI
+persist.service.lgospd.enable=0
+persist.service.pcsync.enable=0
+
+# SOD Mode
+sys.enable.smart_on_display=0
+sys.enable.smart_on_doze=0
+sys.preactivated.smart_on_display=0
+
+# System Tweaks
+debug.bt.lowspeed=true
+persist.sys.force_highendgfx=true
+persist.sys.strictmode.disable=true
+ro.config.hw.logsystem.send=0
+ro.config.ksm=true
+
+# ZRAM Tweaks
+persist.sys.use_dithering=0
+
+
+#===============================================
+# End of system.prop                           =
+# Modified by @preparetodietm                  =
+#===============================================
