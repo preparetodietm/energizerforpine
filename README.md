@@ -6,6 +6,11 @@
 
 - **Energizer** is a collection of tweaks that can boost your ROM/GSI and picked the best magisk module for your Redmi 7A phone. 
 
+## Requirements:
+
+- Android 9-11
+- Magisk 20.4+
+
 ## Notes:
 
 **FOR XIAOMI REDMI 7A (pine) DEVICES ONLY!**
@@ -13,6 +18,15 @@
 1. This module needs [Busybox for Android NDK](https://github.com/Magisk-Modules-Repo/busybox-ndk) in Magisk Manager or [Brutal Busybox](https://github.com/feravolt/Brutal_busybox) to worked on your Redmi 7A Phone.
 2. If you put some _tweaks_ on your **system/build.prop** similar to the features of Energizer, remove them and restart your device then install this module.
 3. Do not install any _Magisk Module_ related to the **features of Energizer**.
+
+## Installation:
+
+1. Flash
+2  Select the desired options on the volume selector
+3. Reboot
+4. Enjoy!
+
+**If you want to _uninstall_ the module, just flash it again.**
 
 ## Features:
 
