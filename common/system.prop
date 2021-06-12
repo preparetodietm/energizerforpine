@@ -168,6 +168,18 @@ ro.hwissoris.splitwindow.support_all=true
 
 # Internet and Network Signal Tweaks Properties
 
+# 4G and 3G Tweaks
+ro.ril.enable.3g.prefix=1 
+ro.ril.enable.a53=1 
+ro.ril.enable.dtm=1 
+ro.ril.gprsclass=12 
+ro.ril.hep=0 
+ro.ril.hsdpa.category=8 
+ro.ril.hsupa.category=6
+ro.ril.hsxpa=2 
+ro.ril.htcmaskw1=14449 
+ro.ril.htcmaskw1.bitmask=4294967295
+
 # Better Internet Speed
 net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960
 net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
