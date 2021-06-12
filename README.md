@@ -56,6 +56,7 @@
 - System FPS
 
 **Internet and Network Signal Tweaks:**
+- 4G and 3G Tweaks
 - Better Internet Speed
 - Better Network Signals
 - Boost Signal
