@@ -44,6 +44,9 @@ video.accelerate.hw=1
 
 # Battery Tweaks Properties
 
+# Save More Battery Power
+wifi.supplicant_scan_interval=180
+
 # Smart Charging
 ro.build.smartcharging=1
 
@@ -90,18 +93,11 @@ debug.sf.showfps=0
 debug.sf.showupdates=0
 
 # FPS Tuner
-persist.sys.logsystem.neversend=0
 ro.config.clear_launcher_data=true
 ro.config.do_sdcard_upgrade=true
-ro.config.hisi_soc_type=true
-ro.config.hisi_rpt_mode=0
 ro.config.hw_dolby=true
 ro.config.hw_GSensorOptimize=true
 ro.config.hw_simpleui_enable=1
-ro.config.hw.logsystem.send=0 
-ro.config.hw.powerlogserve.send=0
-ro.config.lowBatteryUpgrade=true
-ro.config.performanceMode=true
 
 # Game Mode for CPU
 ro.cpufreq.game=1
@@ -178,18 +174,21 @@ ro.ril.hsdpa.category=8
 ro.ril.hsupa.category=6
 ro.ril.hsxpa=2 
 ro.ril.htcmaskw1=14449 
-ro.ril.htcmaskw1.bitmask=4294967295
+ro.ril.htcmaskw1.bitmask=4294967295 
 
 # Better Internet Speed
-net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960
-net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
-net.tcp.buffersize.evdo_b=6144,87380,1048576,6144,87380,1048576
-net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960
-net.tcp.buffersize.hsdpa=6144,87380,1048576,6144,87380,1048576
-net.tcp.buffersize.hspa=6144,87380,524288,6144,16384,262144
-net.tcp.buffersize.lte=524288,1048576,2097152,524288,1048576,2097152
-net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960
-net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.default=4096,87380,704512,4096,16384,110208
+net.tcp.buffersize.edge=4093,26280,70800,4096,16384,70800
+net.tcp.buffersize.ethernet=524288,2097152,4194304,524288,2097152,4194304
+net.tcp.buffersize.evdo=4094,87380,262144,4096,16384,262144
+net.tcp.buffersize.gprs 4092,8760,48000,4096,8760,48000
+net.tcp.buffersize.hsdpa=61167,367002,1101005,8738,52429,262114
+net.tcp.buffersize.hspa=40778,244668,734003,16777,100663,301990
+net.tcp.buffersize.hspap=122334,734003,2202010,32040,192239,576717
+net.tcp.buffersize.hsupa=40778,244668,734003,16777,100663,301990
+net.tcp.buffersize.lte=524288,2097152,4194304,524288,2097152,4194304
+net.tcp.buffersize.umts=58254,349525,1048576,58254,349525,1048576
+net.tcp.buffersize.wifi=524288,2097152,4194304,524288,2097152,4194304
 
 # Better Network Signals
 persist.cust.tel.eons=1
@@ -198,14 +197,32 @@ ro.config.hw_fast_dormancy=1
 # Boost Signal
 bt.max.hfpclient.connections=1
 
+# Disable IPv6
+net.ipv6.conf.all.disable_ipv6=1
+net.ipv6.conf.default.disable_ipv6=1
+net.ipv6.conf.dummy0.disable_ipv6=1
+net.ipv6.conf.eth0.disable_ipv6=1
+net.ipv6.conf.gprs.disable_ipv6=1
+net.ipv6.conf.ip6tnl0.disable_ipv6=1
+net.ipv6.conf.lo.disable_ipv6=1
+net.ipv6.conf.ppp0.disable_ipv6=1
+net.ipv6.conf.rmnet0.disable_ipv6=1
+net.ipv6.conf.sit0.disable_ipv6=1
+net.ipv6.conf.wlan0.disable_ipv6=1
+persist.telephony.support.ipv4=1
+persist.telephony.support.ipv6=0
+
 # Signal Performance
+net.ipv4.icmp_echo_ignore_all=0 
+net.ipv4.icmp_echo_ignore_broadcasts=0
+net.ipv4.tcp_ecn_fallback=1
+net.ipv4.tcp_mtu_probing=1
 net.tethering.noprovisioning=true
 persist.fuse_sdcard=true
 persist.radio.no_wait_for_card=1
 persist.sys.dun.override=0
 persist.sys.storage_preload=1
 ro.storage_manager.enabled=true
-ro.tether.denied=false
 ro.wifi.hotspotUI=1
 
 
@@ -259,8 +276,6 @@ persist.radio.oem_socket=false
 debug.gralloc.gfx_ubwc_disable=0
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
-debug.sf.high_fps_early_gl_phase_offset_ns=9000000
-debug.sf.high_fps_early_phase_offset_ns=6100000
 persist.hwc.enable_vds=1
 persist.sys.force_sw_gles=1
 
@@ -282,7 +297,6 @@ persist.mm.sta.enable=0
 persist.preload.common=1
 persist.sys.autoclearsave=3
 persist.zygote.preload_threads=3
-ro.zygote.preload.disable=1
 ro.zygote.preload.enable=0
 
 # Phone Call Ring Faster
@@ -298,24 +312,11 @@ com.qc.hardware=1
 debug.qc.hardware=true
 debug.qctwa.preservebuf=1
 debug.qctwa.statusbar=1
-persist.radio.apm_sim_not_pwdn=0
-ro.adb.qemud=0
+persist.radio.apm_sim_not_pwdn=1
 ro.enable_boot_charger_mode=false
-ro.kernel.qemu=0
 ro.qc.sdk.camera.facialproc=false
 ro.qc.sdk.gestures.camera=false
-ro.qc.sdk.sensors.gestures=true 
-ro.qc.sensors.step_counter=false 
-ro.qti.sensors.facing=false
-ro.qti.sensors.pedometer=false
-ro.qti.sensors.pick_up=false
-ro.qti.sensors.step_counter=false
-ro.qti.sensors.step_detector=false
-ro.qualcomm.sensors.game_rv=false 
-ro.qualcomm.sensors.georv=true
-ro.qualcomm.sensors.pam=false
-ro.qualcomm.sensors.scrn_ortn=true
-ro.qualcomm.sensors.smd=false
+ro.qc.sdk.sensors.gestures=true
 sys.boot_from_charger_mode=0
 
 # Sdcard Speed Tweaks
@@ -335,11 +336,12 @@ sys.preactivated.smart_on_display=0
 debug.bt.lowspeed=true
 persist.sys.force_highendgfx=true
 persist.sys.strictmode.disable=true
-ro.config.hw.logsystem.send=0
+persist.sys.usb.config=mtp
 ro.config.ksm=true
 
 # ZRAM Tweaks
 persist.sys.use_dithering=0
+ro.vendor.qti.config.zram=true
 
 
 #===============================================
