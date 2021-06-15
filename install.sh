@@ -215,7 +215,7 @@ on_install() {
   ui_print "================================================"
   ui_print " Do you want to Execute Dexopt Everything? "
   ui_print " "
-  ui_print " Note: Install it First before you Execute "
+  ui_print " Note: Install it First before you Execute (Choose 3) "
   ui_print " "
   sleep 5
   ui_print " 1. Yes, please 🤗 "
@@ -301,8 +301,8 @@ esac
   ui_print " "
   ui_print " 𝑪𝒍𝒆𝒂𝒓 𝑹𝑨𝑴 𝒄𝒂𝒄𝒉𝒆 𝒂𝒏𝒅 𝒇𝒐𝒓𝒄𝒆 𝒔𝒕𝒐𝒑 𝒂𝒍𝒍 𝒂𝒑𝒑𝒔 𝒕𝒐 𝒈𝒆𝒕 𝒎𝒐𝒓𝒆 𝒇𝒓𝒆𝒆 𝑹𝑨𝑴 𝒃𝒆𝒇𝒐𝒓𝒆 "
   ui_print " 𝒑𝒍𝒂𝒚𝒊𝒏𝒈 𝒈𝒂𝒎𝒆𝒔. 𝑼𝒔𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔 𝒇𝒓𝒐𝒎 𝑻𝒆𝒓𝒎𝒊𝒏𝒂𝒍 𝑬𝒎𝒖𝒍𝒂𝒕𝒐𝒓/𝑻𝒆𝒓𝒎𝒖𝒙 "
-  ui_print " 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝 (𝒔𝒂𝒇𝒆) , 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝𝟮 (𝑨𝒈𝒈𝒓𝒆𝒔𝒔𝒊𝒗𝒆) , 𝒐𝒓 "
-  ui_print " 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝𝟯 (𝑬𝒙𝒕𝒓𝒆𝒎𝒆). "
+  ui_print " 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝 (𝒔𝒂𝒇𝒆) , 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝𝟮 (𝑨𝒈𝒈𝒓𝒆𝒔𝒔𝒊𝒗𝒆) , "
+  ui_print " 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝𝟯 (𝑬𝒙𝒕𝒓𝒆𝒎𝒆) , or 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝4 (Most Extreme). "
   ui_print "********************************************************"
   ui_print " " 
   sleep 5
@@ -315,27 +315,27 @@ esac
   ui_print " "
   ui_print " Choose 1 or 2 "
 
-FR2=1
+FR4=1
 while true; do
-  ui_print " $FR2 "
+  ui_print " $FR4 "
 if $VKSEL; then
-  FR2=$((FR2 + 1))
+  FR4=$((FR4 + 1))
 else    
 break    
 fi
-if [ $FR2 -gt 2 ]; then
-  FR2=1
+if [ $FR4 -gt 2 ]; then
+  FR4=1
 fi
 done  
-  ui_print " Selected: $FR2 "
+  ui_print " Selected: $FR4 "
   ui_print " "
   sleep 1
   
-case $FR2 in
-  1 ) FR3=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $flushram1 ; cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1 ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram/Flush/* $FR1 ; mkdir -p $FR2 ; cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR2 ; mkdir -p $FR3 ; cp -f $TMPDIR/Redmi-7A/flushram1/log/* $FR3 ; ui_print "✅ Flush RAM Installed! Log is located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
-  2 ) FR3=" "; ui_print "❌ Flush RAM Not Installed!" ; ui_print "================================================" ; continue ;;
+case $FR4 in
+  1 ) FR5=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $flushram1 ; cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1 ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram/Flush/* $FR1 ; mkdir -p $FR2 ; cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR2 ; mkdir -p $FR3 ; cp -f $TMPDIR/Redmi-7A/flushram1/log/* $FR3 ; ui_print "✅ Flush RAM Installed! Logs are located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
+  2 ) FR5=" "; ui_print "❌ Flush RAM Not Installed!" ; ui_print "================================================" ; continue ;;
 esac 
-  ui_print " $FR3 "
+  ui_print " $FR5 "
   sleep 1
 }
 
