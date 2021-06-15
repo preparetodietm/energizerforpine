@@ -6,6 +6,9 @@
 
 - **Energizer** is a collection of tweaks that can boost your ROM/GSI and picked the best magisk module for your Redmi 7A phone. 
 
+## The Best Partner Kernel of Energizer for Redmi 7A
+- [Lilac Kernel](https://github.com/dlwlrma123/kernel_lilac_sdm439) - [Download here](https://t.me/energizerforpine/2169)
+
 ## Requirements:
 
 - Android 9-11
@@ -39,6 +42,7 @@
 - Video Acceleration Enabled
 
 **Battery Tweaks:**
+- Save More Battery Power
 - Smart Charging
 
 **CPU, GPU, FPS and Game Tweaks:**
@@ -60,6 +64,7 @@
 - Better Internet Speed
 - Better Network Signals
 - Boost Signal
+- Disable IPv6
 - Signal Performance
 
 **RAM Management and Multitasking Tweaks:**
@@ -86,8 +91,9 @@
 - System Tweaks
 - ZRAM Tweaks
 
-
 **Dexopt Everything**
+
+**Disable GPU Throttling**
 
 **Double Wifi Bandwidth**
 
@@ -102,6 +108,9 @@
 **Dexopt Everything**
 - Dexopt is a system-internal tool that is used to produce optimized dex files by using `su -c cmd package bg-dexopt-job` code.
 
+**Disable GPU Throttling**
+- Disable GPU Throttling to fix some fps drop while playing games.
+
 **Double Wifi Bandwidth**
 - Doubles your wifi bandwith by modifying WNCSS_qcom_cfg.ini
 
@@ -112,7 +121,7 @@
 - Clear RAM apps caches, kill all apps, and force stop all apps to get more free RAM before playing games.
   
 Terminal Emulator/Termux command:
-- `su -c flush` (Safe Mode) - kill all running apps in backround
+- `su -c flush` (Safe Mode) - kill all running apps in backround.
 - `su -c flush2` (Aggressive Mode) - force stop all background & foreground 3rd party apps.        
 - `su -c flush3` (Extreme Mode) - force stop all backgrounds, foreground 3rd party, and system apps.
 
@@ -122,5 +131,5 @@ Terminal Emulator/Termux command:
 ## Credits:
 
 - AkiraNoSushi for his Enable Force Fast Charging Module
-- Lalice_21 for his Dexopt Everything
+- dlwlrma123 for his Dexopt Everything
 - WeAreRavens for Flush RAM and Touchscreen Improvement
