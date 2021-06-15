@@ -187,8 +187,11 @@ on_install() {
   DE=/data/adb/modules_update/dexopt-everything/
   DWB=$MODPATH/system/vendor/etc/wifi/
   flushram=/data/adb/modules_update/flushram/
+  flushram1=/data/adb/modules_update/fkm_spectrum_injector/
   FR=/data/adb/modules_update/flushram/system/bin/
   FR1=/data/adb/modules_update/flushram/system/priv-app/Flush/
+  FR2=/data/adb/modules_update/fkm_spectrum_injector/system/bin/
+  FR3=/data/media/0/.weareravens/
   TI=$MODPATH/system/usr/idc/
   TI1=$MODPATH/system/vendor/usr/idc/
   
@@ -329,7 +332,7 @@ done
   sleep 1
   
 case $FR2 in
-  1 ) FR3=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram/Flush/* $FR1 ; ui_print "✅ Flush RAM Installed! Log is located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
+  1 ) FR3=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $flushram1 ; cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1 ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram/Flush/* $FR1 ; mkdir -p $FR2 ; cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR2 ; mkdir -p $FR3 ; cp -f $TMPDIR/Redmi-7A/flushram1/log/* $FR3 ; ui_print "✅ Flush RAM Installed! Log is located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
   2 ) FR3=" "; ui_print "❌ Flush RAM Not Installed!" ; ui_print "================================================" ; continue ;;
 esac 
   ui_print " $FR3 "
@@ -478,6 +481,7 @@ set_permissions() {
   # Flush RAM
   set_perm_recursive $flushram 0 0 0755 0644
   set_perm_recursive $flushram/system/bin 0 2000 0755 0755
+  set_perm_recursive $flushram1/system/bin 0 2000 0755 0755
   
   # Here are some examples:
   # set_perm_recursive  $MODPATH/system/lib       0     0       0755      0644
