@@ -455,8 +455,7 @@ else
     run_fr
 fi
   
-if [ /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ]; then 
-    ui_print " "
+if [ /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ]; then
     ui_print "✅ Touchscreen Improvement Already Installed!"
     sleep 1
     continue
