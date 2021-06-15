@@ -130,6 +130,6 @@ Terminal Emulator/Termux command:
 
 ## Credits:
 
-- AkiraNoSushi for his Enable Force Fast Charging Module
-- dlwlrma123 for his Dexopt Everything
-- WeAreRavens for Flush RAM and Touchscreen Improvement
+- [AkiraNoSushi](https://github.com/AkiraNoSushi) for his Enable Force Fast Charging Module
+- [dlwlrma1](https://github.com/dlwlrma123) for Giving Dexopt Everything to me
+- [WeAreRavens](https://t.me/WeAreRavenS) for Flush RAM and Touchscreen Improvement
