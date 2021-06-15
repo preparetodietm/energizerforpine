@@ -124,6 +124,7 @@ Terminal Emulator/Termux command:
 - `su -c flush` (Safe Mode) - kill all running apps in backround.
 - `su -c flush2` (Aggressive Mode) - force stop all background & foreground 3rd party apps.        
 - `su -c flush3` (Extreme Mode) - force stop all backgrounds, foreground 3rd party, and system apps.
+- `su -c flush4` (Most Extreme Mode) - same as Extreme Mode. More info [here](https://raw.githubusercontent.com/preparetodietm/energizerforpine/main/Redmi-7A/flushram/weareravens_flush.conf).
 
 **Touchscreen Improvement**
 - A tweaks for touchsreen "fts_ts" for Redmi 7A devices.
