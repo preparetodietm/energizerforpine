@@ -14,6 +14,7 @@ mkdir -p $TMPDIR
 ui_print() { echo "$1"; }
 
 busybox1() {
+	ui_print " "
 	ui_print "- 𝐁𝐮𝐬𝐲𝐛𝐨𝐱 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝"
 	sleep 1
 	ui_print " 𝗡𝗮𝗺𝗲: 𝘽𝙪𝙨𝙮𝙗𝙤𝙭 𝙛𝙤𝙧 𝘼𝙣𝙙𝙧𝙤𝙞𝙙 𝙉𝘿𝙆 "
@@ -23,6 +24,7 @@ busybox1() {
 }
 
 busybox2() {
+	ui_print " "
 	ui_print "- 𝐁𝐮𝐬𝐲𝐛𝐨𝐱 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝"
 	sleep 1
 	ui_print " 𝗡𝗮𝗺𝗲: 𝘽𝙧𝙪𝙩𝙖𝙡 𝘽𝙪𝙨𝙮𝙗𝙤𝙭 "
