@@ -126,7 +126,7 @@ sleep 1
   ui_print " #      #   ##  #      #  #   #   #  #   #     #      #  #  "
   ui_print " #####  #    #  #####  #   #   ###   #  #####  #####  #   # "
 sleep 1 
-  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟏 - 𝐬𝐭𝐚𝐛𝐥𝐞                        "
+  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟐 - 𝐬𝐭𝐚𝐛𝐥𝐞                        "
 sleep 1
   ui_print " "
   ui_print "                 Powered by 𝐌𝐚𝐠𝐢𝐬𝐤 (@𝐭𝐨𝐩𝐣𝐨𝐡𝐧𝐰𝐮)                "
@@ -162,6 +162,12 @@ sleep 1
   ui_print " Added Some Optimization Tweaks  "
   ui_print " "
 sleep 1 
+  ui_print " Added Disable GPU Throttling  "
+  ui_print " "
+sleep 1 
+  ui_print " Added Enable Force Fast Charging  "
+  ui_print " "
+sleep 1 
   ui_print " 𝐃𝐨𝐧𝐞: 𝑬𝒏𝒆𝒓𝒈𝒊𝒛𝒆𝒓 𝑻𝒘𝒆𝒂𝒌𝒔 𝑨𝒅𝒅𝒆𝒅! "
   ui_print " "
 sleep 3    
@@ -180,25 +186,20 @@ on_install() {
   #Callbacks
   DE=/data/adb/modules_update/dexopt-everything/
   DWB=$MODPATH/system/vendor/etc/wifi/
-  EFFC=$TMPDIR/service.sh
   flushram=/data/adb/modules_update/flushram/
   FR=/data/adb/modules_update/flushram/system/bin/
   FR1=/data/adb/modules_update/flushram/system/priv-app/Flush/
-  TE=$MODPATH/system/usr/idc/
-  TE1=$MODPATH/system/vendor/usr/idc/
+  TI=$MODPATH/system/usr/idc/
+  TI1=$MODPATH/system/vendor/usr/idc/
   
-  # Choose what features you want to be included on this module.
-  . $TMPDIR/addon/Volume-Key-Selector/preinstall.sh
-  ui_print " "
-  ui_print "         𝐍𝐨𝐭𝐞: 𝑽𝒐𝒍𝒖𝒎𝒆 𝑼𝒑 = 𝑪𝒉𝒐𝒐𝒔𝒆 "
-  ui_print "              𝑽𝒐𝒍𝒖𝒎𝒆 𝑫𝒐𝒘𝒏= 𝑺𝒆𝒍𝒆𝒄𝒕 "
-  ui_print " "
-  ui_print "================================================"
-  ui_print "   𝗖𝗵𝗼𝗼𝘀𝗲 𝘄𝗵𝗮𝘁 𝘆𝗼𝘂 𝘄𝗮𝗻𝘁 𝘁𝗼 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗼𝗻 𝘆𝗼𝘂𝗿 𝗣𝗵𝗼𝗻𝗲!   "
-  ui_print "================================================"
-  sleep 5
-  
-  ui_print " "
+  run_detection() {
+  ui_print " "	
+  ui_print "- Detecting if other tweaks are installed..."
+  sleep 5 
+}
+
+  run_de() {
+  ui_print " "	
   ui_print "*******************************************************"
   ui_print " 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐃𝐞𝐱𝐨𝐩𝐭 𝐄𝐯𝐞𝐫𝐲𝐭𝐡𝐢𝐧𝐠? "
   ui_print " "
@@ -245,8 +246,10 @@ esac
   ui_print " $DE2 "
   ui_print "================================================"
   sleep 1
-  
-  ui_print " "
+} 
+
+  run_dwb() {
+  ui_print " "	
   ui_print "**************************************************"
   ui_print " 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐃𝐨𝐮𝐛𝐥𝐞 𝐖𝐢𝐟𝐢 𝐁𝐚𝐧𝐝𝐰𝐢𝐭𝐡? "
   ui_print " "
@@ -286,58 +289,10 @@ esac
   ui_print " $DWB2 "
   ui_print "================================================"
   sleep 1
-  
-  ui_print " "
-  ui_print "**********************************************"
-  ui_print " 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐄𝐧𝐚𝐛𝐥𝐞 𝐅𝐨𝐫𝐜𝐞 𝐅𝐚𝐬𝐭 𝐂𝐡𝐚𝐫𝐠𝐢𝐧𝐠? "
-  ui_print " "
-  ui_print " 𝑰𝒕'𝒔 𝒆𝒏𝒂𝒃𝒍𝒆 𝒇𝒐𝒓𝒄𝒆 𝒇𝒂𝒔𝒕 𝒄𝒉𝒂𝒓𝒈𝒊𝒏𝒈 𝒐𝒏 𝒚𝒐𝒖𝒓 𝑹𝒆𝒅𝒎𝒊 7𝑨 𝒅𝒆𝒗𝒊𝒄𝒆𝒔. "
-  ui_print "**********************************************"
-  ui_print " "
-  sleep 5
-  
-  ui_print "================================================"
-  ui_print " Do you want to install Enable Force Fast Charging? "
-  ui_print " "
-  ui_print " 1. Yes, please 🤗 "
-  ui_print " 2. No, I don't need it 😡 "
-  ui_print " "
-  ui_print " Choose 1 or 2 "
+}
 
-EFFC1=1
-while true; do
-  ui_print " $EFFC1 "
-if $VKSEL; then
-  EFFC1=$((EFFC1 + 1))
-else    
-break    
-fi
-if [ $EFFC1 -gt 2 ]; then
-  EFFC1=1
-fi
-done  
-  ui_print " Selected: $EFFC1 "
-  ui_print " "
-  sleep 1
-  
-case $EFFC1 in
-  1 ) EFFC2="✅ Enable Force Fast Charging Installed!"; echo "# Enable fast charging
-if [ -e /sys/kernel/fast_charge/force_fast_charge ]; then
-  echo "1" > /sys/kernel/fast_charge/force_fast_charge
-fi
-# by AkiraNoSushi 
-
-#=========================================================
-# End of service.sh
-# Modified by @preparetodietm
-#========================================================= " >> $EFFC ;;  
-  2 ) EFFC2="❌ Enable Force Fast Charging Not Installed!"; continue ;;
-esac 
-  ui_print " $EFFC2 "
-  ui_print "================================================"
-  sleep 1
-  
-  ui_print " "
+  run_fr() {
+  ui_print " "	
   ui_print "********************************************************"
   ui_print " 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐅𝐥𝐮𝐬𝐡 𝐑𝐀𝐌? "
   ui_print " "
@@ -379,8 +334,11 @@ case $FR2 in
 esac 
   ui_print " $FR3 "
   sleep 1
-  
-  ui_print "*******************************************"
+}
+
+  run_ti() {
+  ui_print " "	
+  ui_print "*******************************************"	
   ui_print " 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐓𝐨𝐮𝐜𝐡𝐬𝐫𝐞𝐞𝐧 𝐈𝐦𝐩𝐫𝐨𝐯𝐞𝐦𝐞𝐧𝐭? "
   ui_print " "
   ui_print " 𝑨 𝒕𝒘𝒆𝒂𝒌𝒔 𝒇𝒐𝒓 𝒕𝒐𝒖𝒄𝒉𝒔𝒓𝒆𝒆𝒏 "𝒇𝒕𝒔_𝒕𝒔" 𝒇𝒐𝒓 𝑹𝒆𝒅𝒎𝒊 7𝑨 𝒅𝒆𝒗𝒊𝒄𝒆𝒔. "
@@ -396,29 +354,114 @@ esac
   ui_print " "
   ui_print " Choose 1 or 2 "
 
-TE2=1
+TI2=1
 while true; do
-  ui_print " $TE2 "
+  ui_print " $TI2 "
 if $VKSEL; then
-  TE2=$((TE2 + 1))
+  TI2=$((TI2 + 1))
 else    
 break    
 fi
-if [ TE2 -gt 2 ]; then
-  TE2=1
+if [ TI2 -gt 2 ]; then
+  TI2=1
 fi
 done  
-  ui_print " Selected: $TE2 "
+  ui_print " Selected: $TI2 "
   ui_print " "
   sleep 1
   
-case $TE2 in
-  1 ) TE3="✅ Touchscreen Improvement Installed!"; mkdir -p $TE ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TE ; mkdir -p $TE1 ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TE1 ;;
-  2 ) TE3="❌ Touchscreen Improvement Not Installed!"; continue ;;
+case $TI2 in
+  1 ) TI3="✅ Touchscreen Improvement Installed!"; mkdir -p $TE ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TE ; mkdir -p $TE1 ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TE1 ;;
+  2 ) TI3="❌ Touchscreen Improvement Not Installed!"; continue ;;
 esac
-  ui_print " $TE3 "
+  ui_print " $TI3 "
   ui_print "================================================"
   sleep 1
+}
+
+  # Choose what features you want to be included on this module.
+  . $TMPDIR/addon/Volume-Key-Selector/preinstall.sh
+  ui_print " "
+  ui_print "         𝐍𝐨𝐭𝐞: 𝑽𝒐𝒍𝒖𝒎𝒆 𝑼𝒑 = 𝑪𝒉𝒐𝒐𝒔𝒆 "
+  ui_print "              𝑽𝒐𝒍𝒖𝒎𝒆 𝑫𝒐𝒘𝒏= 𝑺𝒆𝒍𝒆𝒄𝒕 "
+  ui_print " "
+  ui_print "================================================"
+  ui_print "   𝗖𝗵𝗼𝗼𝘀𝗲 𝘄𝗵𝗮𝘁 𝘆𝗼𝘂 𝘄𝗮𝗻𝘁 𝘁𝗼 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗼𝗻 𝘆𝗼𝘂𝗿 𝗣𝗵𝗼𝗻𝗲!   "
+  ui_print "================================================"
+  sleep 2
+if [ -f /data/adb/modules/energizerforpine/module.prop ]; then
+    run_detection
+else
+    continue
+fi    
+
+if [ -f /data/adb/modules/dexopt-everything/module.prop ]; then
+  ui_print " "
+  ui_print "✅ Dexopt Everything Already Installed!"  
+  ui_print "================================================"  
+  ui_print " Do you want to Execute Dexopt Everything? "
+  ui_print " "
+  ui_print " 1. Yes, please 🤗 "
+  ui_print " 2. No, skip it 😡 "
+  ui_print " "
+  ui_print " Choose 1 or 2 "
+  
+
+DE1=1
+while true; do
+  ui_print " $DE1 "
+if $VKSEL; then
+  DE1=$((DE1 + 1))
+else    
+break    
+fi
+if [ $DE1 -gt 2 ]; then
+  DE1=1
+fi
+done  
+  ui_print " Selected: $DE1 "
+  ui_print " "
+  sleep 1
+  
+case $DE1 in
+  1 ) DE2="✅ Dexopt Everything Executed!"; if [ -f /data/adb/modules/dexopt-everything/module.prop ]; then ui_print "- Executing Dexopt Everything..." ; su -c cmd package bg-dexopt-job ; fi ;;
+  2 ) DE2="❌ Dexopt Everything Skipped!"; continue ;;
+esac
+  ui_print " $DE2 "
+  ui_print "================================================"
+  sleep 1
+else
+    run_de
+fi
+  
+if [ /data/adb/modules/energizerforpine/system/vendor/etc/wifi/WCNSS_qcom_cfg.ini ]; then
+    ui_print " "
+    ui_print "✅ Double Wifi Bandwidth Already Installed!"
+    sleep 1
+    continue
+else
+    run_dwb
+fi
+  
+if [ -f /data/adb/modules/flushram/module.prop ]; then
+    ui_print " "
+    ui_print "✅ Flush RAM Already Installed!"
+    sleep 1
+    continue
+else
+    run_fr
+fi
+  
+if [ /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ]; then 
+    ui_print " "
+    ui_print "✅ Touchscreen Improvement Already Installed!"
+    sleep 1
+    continue
+else
+    run_ti
+fi
+
+ui_print " "
 }
 
 # Only some special files require specific permissions
