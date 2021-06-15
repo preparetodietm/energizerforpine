@@ -4,3 +4,18 @@
 #=========================================================
 MODDIR=${0%/*}
 
+# Disable GPU Throttling
+if [ -e /sys/class/kgsl/kgsl-3d0/throttling ]; then
+  echo "0" > /sys/class/kgsl/kgsl-3d0/throttling
+fi
+
+# Enable fast charging
+if [ -e /sys/kernel/fast_charge/force_fast_charge ]; then
+  echo "1" > /sys/kernel/fast_charge/force_fast_charge
+fi
+# by AkiraNoSushi 
+
+#=========================================================
+# End of service.sh
+# Modified by @preparetodietm
+#=========================================================
