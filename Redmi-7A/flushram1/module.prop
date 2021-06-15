@@ -3,4 +3,4 @@ name=Flush RAM 4
 version=stable-version
 versionCode=10
 author=@WeAreRavenS
-description=Force stop all backgrounds and foreground apps from config list. Use this command from Terminal Emulator/Termux 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝4 (Most Extreme).
+description=Force stop all backgrounds and foreground apps from config list. Use this command from Terminal Emulator/Termux 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝4 (Most Extreme). Logs are located at sdcard/.weareravens/weareravens.log .
