@@ -3,11 +3,3 @@
 # More info in the main Magisk thread
 #=========================================================
 MODDIR=${0%/*}
-
-# Set ZRAM Configurations
-setprop ro.vendor.qti.config.zram true
-
-#=========================================================
-# End of post-fs-data.sh
-# Modified by @preparetodietm
-#=========================================================
