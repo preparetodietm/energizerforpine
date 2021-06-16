@@ -6,7 +6,7 @@
 
 - **Energizer** is a collection of tweaks that can boost your ROM/GSI and picked the best magisk module for your Redmi 7A phone. 
 
-## The Best Partner Kernel of Energizer for Redmi 7A ()
+## The Best Partner Kernel of Energizer for Redmi 7A
 - [Lilac Kernel](https://github.com/dlwlrma123/kernel_lilac_sdm439) - [Soon]()
 
 ## Requirements:
