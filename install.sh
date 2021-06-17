@@ -126,10 +126,10 @@ sleep 1
   ui_print " #      #   ##  #      #  #   #   #  #   #     #      #  #  "
   ui_print " #####  #    #  #####  #   #   ###   #  #####  #####  #   # "
 sleep 1 
-  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟐 - 𝐬𝐭𝐚𝐛𝐥𝐞                        "
+  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟎 - 𝐬𝐭𝐚𝐛𝐥𝐞                      "
 sleep 1
   ui_print " "
-  ui_print "                 Powered by 𝐌𝐚𝐠𝐢𝐬𝐤 (@𝐭𝐨𝐩𝐣𝐨𝐡𝐧𝐰𝐮)                "
+  ui_print "                 Powered by 𝐌𝐚𝐠𝐢𝐬𝐤 (@𝐭𝐨𝐩𝐣𝐨𝐡𝐧𝐰𝐮)               "
   ui_print "************************************************************"
 sleep 1
   ui_print " Phone Model: $(getprop ro.product.model) "
@@ -141,34 +141,10 @@ sleep 0.5
   ui_print " Build Type: Stable "
   ui_print " "
 sleep 0.5
-  ui_print " 𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐢𝐧𝐠 𝐄𝐧𝐞𝐫𝐠𝐢𝐳𝐞𝐫 𝐓𝐰𝐞𝐚𝐤𝐬... "
+  ui_print " 𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐢𝐧𝐠 𝐄𝐧𝐞𝐫𝐠𝐢𝐳𝐞𝐫 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 + 𝐅𝐢𝐱𝐞𝐬 𝐚𝐧𝐝 𝐈𝐦𝐩𝐫𝐨𝐯𝐞𝐦𝐞𝐧𝐭𝐬... "
   ui_print " "
 sleep 5 
-  ui_print " Added Audio & Video Tweaks "
-  ui_print " "
-sleep 1
-  ui_print " Added Battery Tweaks "
-  ui_print " "
-sleep 1
-  ui_print " Added CPU, GPU, FPS and Game Tweaks "
-  ui_print " "
-sleep 1
-  ui_print " Added Internet and Network Signal Tweaks "
-  ui_print " "
-sleep 1
-  ui_print " Added RAM Management and Multitasking Tweaks "
-  ui_print " "
-sleep 1
-  ui_print " Added Some Optimization Tweaks  "
-  ui_print " "
-sleep 1 
-  ui_print " Added Disable GPU Throttling  "
-  ui_print " "
-sleep 1 
-  ui_print " Added Enable Force Fast Charging  "
-  ui_print " "
-sleep 1 
-  ui_print " 𝐃𝐨𝐧𝐞: 𝑬𝒏𝒆𝒓𝒈𝒊𝒛𝒆𝒓 𝑻𝒘𝒆𝒂𝒌𝒔 𝑨𝒅𝒅𝒆𝒅! "
+  ui_print " 𝐃𝐨𝐧𝐞: 𝑬𝒏𝒆𝒓𝒈𝒊𝒛𝒆𝒓 𝑭𝒆𝒂𝒕𝒖𝒓𝒆𝒔 + 𝑭𝒊𝒙𝒆𝒔 𝒂𝒏𝒅 𝑰𝒎𝒑𝒓𝒐𝒗𝒆𝒎𝒆𝒏𝒕𝒔 𝑰𝒏𝒔𝒕𝒂𝒍𝒍𝒆𝒅! "
   ui_print " "
 sleep 3    
 }
@@ -183,7 +159,7 @@ on_install() {
   ui_print "Done"
   sleep 1
   
-  #Callbacks
+  # Callbacks
   DE=/data/adb/modules_update/dexopt-everything/
   DWB=$MODPATH/system/vendor/etc/wifi/
   flushram=/data/adb/modules_update/flushram/
@@ -213,16 +189,13 @@ on_install() {
   sleep 5
   
   ui_print "================================================"
-  ui_print " Do you want to Execute Dexopt Everything? "
-  ui_print " "
-  ui_print " Note: Install it First before you Execute (Choose 3) "
+  ui_print " Do you want to install Dexopt Everything? "
   ui_print " "
   sleep 5
   ui_print " 1. Yes, please 🤗 "
   ui_print " 2. No, skip it 😡 "
-  ui_print " 3. I want to Install it First 😁! "
   ui_print " "
-  ui_print " Choose 1, 2, or 3 "
+  ui_print " Choose 1 or 2 "
   
 
 DE1=1
@@ -233,7 +206,7 @@ if $VKSEL; then
 else    
 break    
 fi
-if [ $DE1 -gt 3 ]; then
+if [ $DE1 -gt 2 ]; then
   DE1=1
 fi
 done  
@@ -242,9 +215,8 @@ done
   sleep 1
   
 case $DE1 in
-  1 ) DE2="✅ Dexopt Everything Executed!"; if [ -f /data/adb/modules/dexopt-everything/module.prop ]; then ui_print "- Executing Dexopt Everything..." ; su -c cmd package bg-dexopt-job ; else ui_print "🤷 Dexopt Everything Missing or Not Installed. Executing Termimated!" continue ; fi ;;
+  1 ) DE2="✅ Dexopt Everything Installed!"; mkdir -p $DE ; cp -f $TMPDIR/Redmi-7A/dexopt-everything/* $DE ;;
   2 ) DE2="❌ Dexopt Everything Skipped!"; continue ;;
-  3 ) DE2="✅ Dexopt Everything Installed!"; mkdir -p $DE ; cp -f $TMPDIR/Redmi-7A/dexopt-everything/* $DE ;;
 esac
   ui_print " $DE2 "
   ui_print "================================================"
@@ -455,7 +427,8 @@ else
     run_fr
 fi
   
-if [ /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ]; then
+if [ /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ]; then 
+    ui_print " "
     ui_print "✅ Touchscreen Improvement Already Installed!"
     sleep 1
     continue
