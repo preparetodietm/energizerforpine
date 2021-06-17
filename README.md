@@ -1,13 +1,13 @@
 # Energizer for Redmi 7A
 
-## preparetodietm @ [energizerforpine](https://t.me/energizerforpine)
+## by preparetodietm [@energizerforpine](https://t.me/energizerforpine)
 
 ## What is Energizer?
 
-- **Energizer** is a collection of tweaks that can boost your ROM/GSI and picked the best magisk module for your Redmi 7A phone. 
+- **Energizer** is a collection of tweaks that can gives your phone a best performance on games, multitasking, internet connection and signal, streaming videos online, browsing, and picked the best magisk module for your Redmi 7A phone.
 
 ## The Best Partner Kernel of Energizer for Redmi 7A
-- [Lilac Kernel](https://github.com/dlwlrma123/kernel_lilac_sdm439) - [Soon]()
+- [Lilac Kernel](https://github.com/dlwlrma123/kernel_lilac_sdm439) - [Download here](https://www.pling.com/p/1537597/)
 
 ## Requirements:
 
@@ -69,6 +69,7 @@
 
 **RAM Management and Multitasking Tweaks:**
 - Better RAM Management
+- Dalvik VM
 - Disable memplus prefetcher which ram-boost relying on, use traditional swapping
 - Free More RAM
 - LMKD Props
@@ -76,51 +77,47 @@
 
 **Some Optimization Tweaks:**
 - 10bit Color Mode
+- Better Flashlight Intensity & Camera Flash Quality
+- Blurs
+- Camera
 - Camera2API
+- Charger
+- CnE
+- Data Modules
 - Disable Quality Control
+- DRM
 - Graphics Tweaks
+- Gyro
+- IMS
 - Kernel Tweaks
+- Keystore
+- Media
 - Optimization Tweaks
 - Performance Tweaks
 - Phone Call Ring Faster
 - Picture Quality Enhancer
+- QC framework value-adds
 - Qualcomm Tweaks
+- Radio
 - Sdcard Speed Tweaks
 - Smoothens UI
 - SOD Mode
 - System Tweaks
+- WFD
 - ZRAM Tweaks
 
-**Dexopt Everything**
-
-**Disable GPU Throttling**
-
-**Double Wifi Bandwidth**
-
-**Enable Force Fast Charging**
-
-**Flush RAM**
-
-**Touchscreen Improvement**
-
-## How to use?
+## Features in Volume-Key-Selector
 
 **Dexopt Everything**
-- Dexopt is a system-internal tool that is used to produce optimized dex files by using `su -c cmd package bg-dexopt-job` code.
-
-**Disable GPU Throttling**
-- Disable GPU Throttling to fix some fps drop while playing games.
+- Dexopt is a system-internal tool that is used to produce optimized dex files by using `su -c cmd package bg-dexopt-job` code. 
 
 **Double Wifi Bandwidth**
 - Doubles your wifi bandwith by modifying WNCSS_qcom_cfg.ini
 
-**Enable Force Fast Charging**
-- It's enable force fast charging on your Redmi 7A devices.
-
 **Flush RAM**
 - Clear RAM apps caches, kill all apps, and force stop all apps to get more free RAM before playing games.
   
-Terminal Emulator/Termux command:
+_Terminal Emulator/Termux command:_
 - `su -c flush` (Safe Mode) - kill all running apps in backround.
 - `su -c flush2` (Aggressive Mode) - force stop all background & foreground 3rd party apps.        
 - `su -c flush3` (Extreme Mode) - force stop all backgrounds, foreground 3rd party, and system apps.
@@ -128,6 +125,12 @@ Terminal Emulator/Termux command:
 
 **Touchscreen Improvement**
 - A tweaks for touchsreen "fts_ts" for Redmi 7A devices.
+
+## Fixes and Improvements
+
+- Added Disable GPU Throttling to fix fps drop while playing games.
+- Added Enable Force Fast Charging. 
+- Added WIFI Fixes for Lilac Kernel which is not working on some GSI/ROM.
 
 ## Credits:
 
