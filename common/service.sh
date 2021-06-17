@@ -1,4 +1,4 @@
-#!/system/bin/sh 
+#!/system/bin/sh
 # This script will be executed in late_start service mode
 # More info in the main Magisk thread
 #=========================================================
@@ -13,7 +13,13 @@ fi
 if [ -e /sys/kernel/fast_charge/force_fast_charge ]; then
   echo "1" > /sys/kernel/fast_charge/force_fast_charge
 fi
-# by AkiraNoSushi 
+# by AkiraNoSushi
+
+# WIFI Fixes for Lilac Kernel
+if [ -e /sys/module/wlan/parameters/fwpath ]; then
+  echo "sta" > /sys/module/wlan/parameters/fwpath
+fi
+# by SdkPpt
 
 #=========================================================
 # End of service.sh
