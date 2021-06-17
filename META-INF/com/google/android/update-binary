@@ -84,7 +84,7 @@ case $RU in
   imageless_magisk || unmount_magisk_img 
   $BOOTMODE || recovery_cleanup 
   rm -rf $TMPDIR $MOUNTPATH
-  ui_print "✅ Module Uninstalled! Please Reboot Your Device!"
+  ui_print "✅ Module Uninstalled! Reboot Your Device Now!"
   exit 0 ;;
   2 ) RU1=" "; ui_print "❌ Proceeding to Installation..." ; sleep 5 ; continue ;;
 esac 
