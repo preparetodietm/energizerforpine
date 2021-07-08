@@ -1,0 +1,15 @@
+#===============================================
+
+# Dexopt Everything
+pm.dexopt.bg-dexopt everything
+pm.dexopt.core-app everything
+pm.dexopt.forced-dexopt everything
+pm.dexopt.install everything
+pm.dexopt.nsys-library everything
+pm.dexopt.shared-apk everything
+# Thanks to @Lalice_21
+
+#===============================================
+# End of system.prop                           =
+# Modified by @preparetodietm                  =
+#===============================================
