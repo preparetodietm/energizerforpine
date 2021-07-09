@@ -15,11 +15,18 @@ if [ -e /sys/kernel/fast_charge/force_fast_charge ]; then
 fi
 # by AkiraNoSushi
 
-# WIFI Fixes for Lilac Kernel
-if [ -e /sys/module/wlan/parameters/fwpath ]; then
-  echo "sta" > /sys/module/wlan/parameters/fwpath
+# Set default brightness
+if [ -e /sys/class/leds/lcd-backlight/max_brightness ]; then
+  echo "4087" > /sys/class/leds/lcd-backlight/max_brightness
 fi
-# by SdkPpt
+
+# Remove Flush RAM Logs after Booted
+sleep 90
+
+if [ -f /data/adb/modules/flushram/module.prop ]; then
+  rm -rf "/data/media/0/weareravens.log"
+  rm -rf "/data/media/0/.weareravens/weareravens.log"
+fi
 
 #=========================================================
 # End of service.sh
