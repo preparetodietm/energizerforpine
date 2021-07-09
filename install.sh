@@ -126,7 +126,7 @@ sleep 1
   ui_print " #      #   ##  #      #  #   #   #  #   #     #      #  #  "
   ui_print " #####  #    #  #####  #   #   ###   #  #####  #####  #   # "
 sleep 1 
-  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟎 - 𝐬𝐭𝐚𝐛𝐥𝐞                      "
+  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟏 - 𝐬𝐭𝐚𝐛𝐥𝐞                      "
 sleep 1
   ui_print " "
   ui_print "                 Powered by 𝐌𝐚𝐠𝐢𝐬𝐤 (@𝐭𝐨𝐩𝐣𝐨𝐡𝐧𝐰𝐮)               "
@@ -141,10 +141,10 @@ sleep 0.5
   ui_print " Build Type: Stable "
   ui_print " "
 sleep 0.5
-  ui_print " 𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐢𝐧𝐠 𝐄𝐧𝐞𝐫𝐠𝐢𝐳𝐞𝐫 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 + 𝐅𝐢𝐱𝐞𝐬 𝐚𝐧𝐝 𝐈𝐦𝐩𝐫𝐨𝐯𝐞𝐦𝐞𝐧𝐭𝐬... "
+  ui_print " 𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐢𝐧𝐠 𝐄𝐧𝐞𝐫𝐠𝐢𝐳𝐞𝐫 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬... "
   ui_print " "
 sleep 5 
-  ui_print " 𝐃𝐨𝐧𝐞: 𝑬𝒏𝒆𝒓𝒈𝒊𝒛𝒆𝒓 𝑭𝒆𝒂𝒕𝒖𝒓𝒆𝒔 + 𝑭𝒊𝒙𝒆𝒔 𝒂𝒏𝒅 𝑰𝒎𝒑𝒓𝒐𝒗𝒆𝒎𝒆𝒏𝒕𝒔 𝑰𝒏𝒔𝒕𝒂𝒍𝒍𝒆𝒅! "
+  ui_print " 𝐃𝐨𝐧𝐞: 𝑬𝒏𝒆𝒓𝒈𝒊𝒛𝒆𝒓 𝑭𝒆𝒂𝒕𝒖𝒓𝒆𝒔 𝑰𝒏𝒔𝒕𝒂𝒍𝒍𝒆𝒅! "
   ui_print " "
 sleep 3    
 }
@@ -221,7 +221,50 @@ esac
   ui_print " $DE2 "
   ui_print "================================================"
   sleep 1
-} 
+}
+
+  run_cs() {
+  ui_print " "	
+  ui_print "********************************************************"
+  ui_print " 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐂𝐮𝐬𝐭 𝐒𝐰𝐚𝐩? "
+  ui_print " "
+  ui_print " 𝑻𝒖𝒓𝒏𝒔 𝒚𝒐𝒖𝒓 𝒖𝒔𝒆𝒍𝒆𝒔𝒔 𝒑𝒂𝒓𝒕𝒊𝒕𝒊𝒐𝒏 𝒊𝒏𝒕𝒐 𝒔𝒘𝒂𝒑 𝒑𝒂𝒓𝒕𝒊𝒕𝒊𝒐𝒏 𝒂𝒏𝒅 𝒈𝒆𝒕 𝒆𝒙𝒕𝒓𝒂 512𝒎𝒃. "
+  ui_print "********************************************************"
+  ui_print " "
+  sleep 5
+  
+  ui_print "================================================"
+  ui_print " Do you want to install Cust Swap? "
+  ui_print " "
+  ui_print " 1. Yes, please 🤗 "
+  ui_print " 2. No, I don't need it 😡 "
+  ui_print " "
+  ui_print " Choose 1 or 2 "
+
+CS=1
+while true; do
+  ui_print " $CS "
+if $VKSEL; then
+  CS=$((CS + 1))
+else    
+break    
+fi
+if [ $CS -gt 2 ]; then
+  CS=1
+fi
+done  
+  ui_print " Selected: $CS "
+  ui_print " "
+  sleep 1
+  
+case $CS in
+  1 ) CS1="✅ Cust Swap Installed!"; cp -f $TMPDIR/Redmi-7A/cust-swap/cust_swap $MODPATH ; $POSTFSDATA && cp -af $TMPDIR/Redmi-7A/cust-swap/cs-post.sh $MODPATH/cs-post.sh ; $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/cust-swap/cs-late.sh $MODPATH/cs-late.sh ;;
+  2 ) CS1="❌ Cust Swap Not Installed!"; continue ;;
+esac 
+  ui_print " $CS1 "
+  ui_print "================================================"
+  sleep 1
+}
 
   run_dwb() {
   ui_print " "	
@@ -346,10 +389,54 @@ done
   sleep 1
   
 case $TI2 in
-  1 ) TI3="✅ Touchscreen Improvement Installed!"; mkdir -p $TE ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TE ; mkdir -p $TE1 ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TE1 ;;
+  1 ) TI3="✅ Touchscreen Improvement Installed!"; mkdir -p $TI ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TI ; mkdir -p $TI1 ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TI1 ;;
   2 ) TI3="❌ Touchscreen Improvement Not Installed!"; continue ;;
 esac
   ui_print " $TI3 "
+  ui_print "================================================"
+  sleep 1
+}
+
+  run_wf() {	
+  ui_print " "	
+  ui_print "***************************************************"
+  ui_print " 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐖𝐢𝐟𝐢 𝐅𝐢𝐱𝐞𝐬? "
+  ui_print " "
+  ui_print " 𝑭𝒊𝒙 𝒘𝒊𝒇𝒊 𝒏𝒐𝒕 𝒘𝒐𝒓𝒌𝒊𝒏𝒈 𝒂𝒇𝒕𝒆𝒓 𝒇𝒍𝒂𝒔𝒉𝒊𝒏𝒈 𝒌𝒆𝒓𝒏𝒆𝒍 𝒂𝒏𝒅 𝒃𝒐𝒐𝒕𝒆𝒅 𝒕𝒐 𝒔𝒚𝒔𝒕𝒆𝒎. "
+  ui_print " 𝑰𝒏𝒔𝒕𝒂𝒍𝒍 𝒐𝒏𝒍𝒚 𝒊𝒇 𝒚𝒐𝒖 𝒏𝒆𝒆𝒅 𝒊𝒕! "
+  ui_print "***************************************************"
+  ui_print " "
+  sleep 5
+  
+  ui_print "================================================"
+  ui_print " Do you want to install Wifi Fixes? "
+  ui_print " "
+  ui_print " 1. Yes, please 🤗 "
+  ui_print " 2. No, I don't need it 😡 "
+  ui_print " "
+  ui_print " Choose 1 or 2 "
+
+WF=1
+while true; do
+  ui_print " $WF "
+if $VKSEL; then
+  WF=$((WF + 1))
+else    
+break    
+fi
+if [ $WF -gt 2 ]; then
+  WF=1
+fi
+done  
+  ui_print " Selected: $WF "
+  ui_print " "
+  sleep 1
+  
+case $WF in
+  1 ) WF1="✅ Wifi Fixes Installed!"; cp -f $TMPDIR/Redmi-7A/wifi-fixes/wifi_fixes $MODPATH ; $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/wifi-fixes/wf-late.sh $MODPATH/wf-late.sh ;;
+  2 ) WF1="❌ Wifi Fixes Not Installed!"; continue ;;
+esac 
+  ui_print " $WF1 "
   ui_print "================================================"
   sleep 1
 }
@@ -408,8 +495,17 @@ esac
 else
     run_de
 fi
-  
-if [ /data/adb/modules/energizerforpine/system/vendor/etc/wifi/WCNSS_qcom_cfg.ini ]; then
+
+if [ -e /data/adb/modules/energizerforpine/cust_swap ] || [ -f /data/adb/modules/cust_swap/module.prop ]; then
+    ui_print " "
+    ui_print "✅ Cust Swap Already Installed!"
+    sleep 1
+    continue
+else
+    run_cs
+fi
+
+if [ -f /data/adb/modules/energizerforpine/system/vendor/etc/wifi/WCNSS_qcom_cfg.ini ]; then
     ui_print " "
     ui_print "✅ Double Wifi Bandwidth Already Installed!"
     sleep 1
@@ -427,13 +523,22 @@ else
     run_fr
 fi
   
-if [ /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ]; then 
+if [ -f /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ]; then 
     ui_print " "
     ui_print "✅ Touchscreen Improvement Already Installed!"
     sleep 1
     continue
 else
     run_ti
+fi
+
+if [ -e /data/adb/modules/energizerforpine/wifi_fixes ]; then
+    ui_print " "
+    ui_print "✅ Wifi Fixes Already Installed!"
+    sleep 1
+    continue
+else
+    run_wf
 fi
 
 ui_print " "
