@@ -181,12 +181,6 @@ mkdir -p $MODPATH
 
 on_install
 
-# Remove placeholder
-rm -f $MODPATH/system/placeholder 2>/dev/null
-
-# Custom uninstaller
-[ -f $TMPDIR/uninstall.sh ] && cp -af $TMPDIR/uninstall.sh $MODPATH/uninstall.sh
-
 # Auto Mount
 if imageless_magisk; then
     $SKIPMOUNT && touch $MODPATH/skip_mount
@@ -226,6 +220,10 @@ done
 ui_print "- Setting permissions"
 set_permissions
 ui_print "Done"
+
+# Remove stuffs that don't belong to modules
+rm -rf \
+$MODPATH/.github $MODPATH/LICENSE $MODPATH/README.md $MODPATH/.gitattributes* 2>/dev/null
 
 ##########################################################################################
 # Finalizing
