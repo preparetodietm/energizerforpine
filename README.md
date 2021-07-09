@@ -1,18 +1,15 @@
-# Energizer for Redmi 7A
-
-## by preparetodietm [@energizerforpine](https://t.me/energizerforpine)
-
-## What is Energizer?
-
-- **Energizer** is a collection of tweaks that can gives your phone a best performance on games, multitasking, internet connection and signal, streaming videos online, browsing, and picked the best magisk module for your Redmi 7A phone.
+<h1 align="center"> Energizer for Redmi 7A ⚡<br/>
+<img src="https://img.shields.io/badge/Version-1.1-blue.svg">
+</h1>
+<p align="center"><img src="https://github.com/preparetodietm/energizerforpine/blob/energizerforpine_v1.1/.github/energizer.gif">A collection of tweaks that can boosts your phone into a maximum level like a powerful lightning thunder ⚡ and gives you the best performance on gaming, multitasking, signal & internet connection, streaming & browsing, and also picked the best magisk module for your Redmi 7A phone.
+</p>
 
 ## The Best Partner Kernel of Energizer for Redmi 7A
 - [Lilac Kernel](https://github.com/dlwlrma123/kernel_lilac_sdm439) - [Download here](https://www.pling.com/p/1537597/)
 
 ## Requirements:
-
-- Android 9-11
-- Magisk 20.4+
+- <img src="https://img.shields.io/badge/Android-9-brightgreen.svg"> <img src="https://img.shields.io/badge/Android-10-brightgreen.svg"> <img src="https://img.shields.io/badge/Android-11-brightgreen.svg">
+- <img src="https://img.shields.io/badge/Magisk-20.4%2B-00B39B.svg">
 
 ## Notes:
 
@@ -69,10 +66,8 @@
 
 **RAM Management and Multitasking Tweaks:**
 - Better RAM Management
-- Dalvik VM
 - Disable memplus prefetcher which ram-boost relying on, use traditional swapping
 - Free More RAM
-- LMKD Props
 - Remain Launcher
 
 **Some Optimization Tweaks:**
@@ -104,19 +99,27 @@
 - SOD Mode
 - System Tweaks
 - WFD
-- ZRAM Tweaks
+
+**Disable GPU Throttling as default**<br/>
+
+**Enable Force Fast Charging as default**<br/>
+
+**Set default lcd brightness to 4087**<br/>
 
 ## Features in Volume-Key-Selector
 
 **Dexopt Everything**
 - Dexopt is a system-internal tool that is used to produce optimized dex files by using `su -c cmd package bg-dexopt-job` code. 
 
+**Cust Swap**
+- Turns your useless partition into swap partition and get extra 512mb.
+
 **Double Wifi Bandwidth**
 - Doubles your wifi bandwith by modifying WNCSS_qcom_cfg.ini
 
 **Flush RAM**
 - Clear RAM apps caches, kill all apps, and force stop all apps to get more free RAM before playing games.
-  
+
 _Terminal Emulator/Termux command:_
 - `su -c flush` (Safe Mode) - kill all running apps in backround.
 - `su -c flush2` (Aggressive Mode) - force stop all background & foreground 3rd party apps.        
@@ -126,8 +129,20 @@ _Terminal Emulator/Termux command:_
 **Touchscreen Improvement**
 - A tweaks for touchsreen "fts_ts" for Redmi 7A devices.
 
-## Fixes and Improvements
+**Wifi Fixes**
+- Fix wifi not working after flashing kernel and booted to system.
 
+## Changelog
+
+### [Energizer_v1.1](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.1)
+- Added Cust Swap and move wifi fixes to v-k-s features.
+- Added default lcd brightness.
+- Added deleter for flush ram logs.
+- Fix installation scripts.
+- Fix Touchscreen Improvement scripts.
+- Some changes on system.prop.
+
+### [Energizer_v1.0](https://github.com/preparetodietm/energizerforpine/tags)
 - Added Disable GPU Throttling to fix fps drop while playing games.
 - Added Enable Force Fast Charging. 
 - Added WIFI Fixes for Lilac Kernel which is not working on some GSI/ROM.
@@ -135,5 +150,17 @@ _Terminal Emulator/Termux command:_
 ## Credits:
 
 - [AkiraNoSushi](https://github.com/AkiraNoSushi) for his Enable Force Fast Charging Module
-- [dlwlrma1](https://github.com/dlwlrma123) for Giving Dexopt Everything to me
+- [dlwlrma123](https://github.com/dlwlrma123) for Giving Dexopt Everything to me and to Lilac Kernel
+- [Flopster101](https://github.com/SimplyJoel-LTSC) for his Cust Swap Module
+- [SdkPt](http://t.me/SdkPpt) for his idea to fixed wifi
 - [WeAreRavens](https://t.me/WeAreRavenS) for Flush RAM and Touchscreen Improvement
+- To all Redmi 7A Testers<br/>
+<br/>
+<p align="center">
+<a href="https://t.me/preparetodietm"><img src="https://img.shields.io/badge/Telegram-My Account-blue?logo=telegram&style=social"></a><br/>
+<a href="https://t.me/energizerforpine"><img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=social"></a><br/>
+<a href="https://youtube.com/channel/UCbDEvgpYWmxK9uXhQ3-LtQw"><img src="https://img.shields.io/badge/YouTube-Channel-blue?logo=youtube&style=social"></a><br/>
+<br/>
+𝗘𝗻𝗲𝗿𝗴𝗶𝘇𝗲𝗿 𝗳𝗼𝗿 𝗥𝗲𝗱𝗺𝗶 𝟳𝗔 ⚡<br/>
+All Rights Reserved © 2021
+</p>
