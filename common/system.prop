@@ -232,36 +232,27 @@ ro.wifi.hotspotUI=1
 # RAM Management and Multitasking Tweaks Properties
 
 # Better RAM Management
-ro.config.dha_cached_max=16
-ro.config.dha_empty_init=32
+ro.config.dha_cached_max=20
+ro.config.dha_empty_init=42
 ro.config.dha_empty_max=42
 ro.config.dha_lmk_scale=0.545
 ro.config.dha_th_rate=2.3 
 ro.config.dha_tunnable=1
 ro.config.fha_enable=true
-ro.config.sdha_apps_bg_max=64
+ro.config.oomminfree_high=7628,9768,11909,14515,16655,20469
+ro.config.sdha_apps_bg_max=70
 ro.config.sdha_apps_bg_min=8
 ro.sys.fw.bg_apps_limit=32 
-
-# Dalvik VM
-dalvik.vm.heapminfree=4m
-dalvik.vm.heapstartsize=16m
-dalvik.vm.heapgrowthlimit=192m
-dalvik.vm.heapsize=512m
-dalvik.vm.heaptargetutilization=0.75
-dalvik.vm.heapmaxfree=8m
 
 # Disable memplus prefetcher which ram-boost relying on, use traditional swapping
 persist.vendor.sys.memplus.enable=false
 
 # Free More RAM
 dalvik.vm.dexopt-flags=v=n,o=v
-dalvik.vm.verify-bytecode = false
-persist.sys.purgeable_assets=1
-ro.setupwizard.enable_bypass=1
+dalvik.vm.verify-bytecode=false
 
 # Remain Launcher
-ro.HOME_APP_ADJ=1 
+ro.HOME_APP_ADJ=1
 
 
 #===============================================
@@ -427,10 +418,6 @@ ro.config.ksm=true
 
 # WFD
 persist.debug.wfd.enable=1
-
-# ZRAM Tweaks
-persist.sys.use_dithering=0
-ro.vendor.qti.config.zram=true
 
 
 #===============================================
