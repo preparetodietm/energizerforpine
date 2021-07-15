@@ -126,7 +126,7 @@ sleep 1
   ui_print " #      #   ##  #      #  #   #   #  #   #     #      #  #  "
   ui_print " #####  #    #  #####  #   #   ###   #  #####  #####  #   # "
 sleep 1 
-  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟏 - 𝐬𝐭𝐚𝐛𝐥𝐞                      "
+  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟐 - 𝐬𝐭𝐚𝐛𝐥𝐞                      "
 sleep 1
   ui_print " "
   ui_print "                 Powered by 𝐌𝐚𝐠𝐢𝐬𝐤 (@𝐭𝐨𝐩𝐣𝐨𝐡𝐧𝐰𝐮)               "
@@ -165,9 +165,8 @@ on_install() {
   flushram=/data/adb/modules_update/flushram/
   flushram1=/data/adb/modules_update/fkm_spectrum_injector/
   FR=/data/adb/modules_update/flushram/system/bin/
-  FR1=/data/adb/modules_update/flushram/system/priv-app/Flush/
-  FR2=/data/adb/modules_update/fkm_spectrum_injector/system/bin/
-  FR3=/data/media/0/.weareravens/
+  FR1=/data/adb/modules_update/fkm_spectrum_injector/system/bin/
+  FR2=/data/media/0/.weareravens/
   TI=$MODPATH/system/usr/idc/
   TI1=$MODPATH/system/vendor/usr/idc/
   
@@ -330,27 +329,27 @@ esac
   ui_print " "
   ui_print " Choose 1 or 2 "
 
-FR4=1
+FR3=1
 while true; do
-  ui_print " $FR4 "
+  ui_print " $FR3 "
 if $VKSEL; then
-  FR4=$((FR4 + 1))
+  FR3=$((FR3 + 1))
 else    
 break    
 fi
-if [ $FR4 -gt 2 ]; then
-  FR4=1
+if [ $FR3 -gt 2 ]; then
+  FR3=1
 fi
 done  
-  ui_print " Selected: $FR4 "
+  ui_print " Selected: $FR3 "
   ui_print " "
   sleep 1
   
-case $FR4 in
-  1 ) FR5=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $flushram1 ; cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1 ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram/Flush/* $FR1 ; mkdir -p $FR2 ; cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR2 ; mkdir -p $FR3 ; cp -f $TMPDIR/Redmi-7A/flushram1/log/* $FR3 ; ui_print "✅ Flush RAM Installed! Logs are located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
-  2 ) FR5=" "; ui_print "❌ Flush RAM Not Installed!" ; ui_print "================================================" ; continue ;;
+case $FR3 in
+  1 ) FR4=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $flushram1 ; cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1 ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR1 ; mkdir -p $FR2 ; cp -f $TMPDIR/Redmi-7A/flushram1/files/* $FR2 ; $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/flushram/fr-late.sh $flushram/fr-late.sh ; ui_print "✅ Flush RAM Installed! Logs are located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
+  2 ) FR4=" "; ui_print "❌ Flush RAM Not Installed!" ; ui_print "================================================" ; continue ;;
 esac 
-  ui_print " $FR5 "
+  ui_print " $FR4 "
   sleep 1
 }
 
@@ -457,6 +456,7 @@ else
     continue
 fi    
 
+# Detect Dexopt Everything and excluded to module updates
 if [ -f /data/adb/modules/dexopt-everything/module.prop ]; then
   ui_print " "
   ui_print "✅ Dexopt Everything Already Installed!"  
@@ -496,9 +496,13 @@ else
     run_de
 fi
 
+# Detect all installed and included to module updates
 if [ -e /data/adb/modules/energizerforpine/cust_swap ] || [ -f /data/adb/modules/cust_swap/module.prop ]; then
     ui_print " "
     ui_print "✅ Cust Swap Already Installed!"
+    cp -f $TMPDIR/Redmi-7A/cust-swap/cust_swap $MODPATH
+    $POSTFSDATA && cp -af $TMPDIR/Redmi-7A/cust-swap/cs-post.sh $MODPATH/cs-post.sh
+    $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/cust-swap/cs-late.sh $MODPATH/cs-late.sh
     sleep 1
     continue
 else
@@ -508,24 +512,40 @@ fi
 if [ -f /data/adb/modules/energizerforpine/system/vendor/etc/wifi/WCNSS_qcom_cfg.ini ]; then
     ui_print " "
     ui_print "✅ Double Wifi Bandwidth Already Installed!"
+    mkdir -p $DWB
+    cp -f $TMPDIR/Redmi-7A/double-wifi-bandwidth/* $DWB
     sleep 1
     continue
 else
     run_dwb
 fi
-  
-if [ -f /data/adb/modules/flushram/module.prop ]; then
+
+if [ -f /data/adb/modules/flushram/module.prop ] || [ -f /data/adb/modules/flushram1/module.prop ] ; then
     ui_print " "
     ui_print "✅ Flush RAM Already Installed!"
+    mkdir -p $flushram
+    cp -f $TMPDIR/Redmi-7A/flushram/* $flushram
+    mkdir -p $flushram1
+    cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1
+    mkdir -p $FR
+    cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR
+    mkdir -p $FR1
+    cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR1
+    mkdir -p $FR2
+    cp -f $TMPDIR/Redmi-7A/flushram1/files/* $FR2
+    $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/flushram/fr-late.sh $flushram/fr-late.sh
     sleep 1
     continue
 else
     run_fr
 fi
-  
-if [ -f /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ]; then 
+
+if [ -f /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ] || [ -f /data/adb/modules/energizerforpine/system/vendor/usr/idc/fts_ts.idc ]; then 
     ui_print " "
     ui_print "✅ Touchscreen Improvement Already Installed!"
+    mkdir -p $TI
+    cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TI
+    mkdir -p $TI1 ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TI1
     sleep 1
     continue
 else
@@ -534,7 +554,9 @@ fi
 
 if [ -e /data/adb/modules/energizerforpine/wifi_fixes ]; then
     ui_print " "
-    ui_print "✅ Wifi Fixes Already Installed!"
+    ui_print "✅ Wifi Fixes Already Installed!" 
+    cp -f $TMPDIR/Redmi-7A/wifi-fixes/wifi_fixes $MODPATH
+    $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/wifi-fixes/wf-late.sh $MODPATH/wf-late.sh
     sleep 1
     continue
 else
