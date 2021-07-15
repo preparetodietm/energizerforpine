@@ -1,5 +1,5 @@
 <h1 align="center"> Energizer for Redmi 7A ⚡<br/>
-<img src="https://img.shields.io/badge/Version-1.1-blue.svg">
+<img src="https://img.shields.io/badge/Version-1.2-blue.svg">
 </h1>
 <p align="center"><img src="https://github.com/preparetodietm/energizerforpine/blob/energizerforpine_v1.1/.github/energizer.gif">A collection of tweaks that can boosts your phone into a maximum level like a powerful lightning thunder ⚡ and gives you the best performance on gaming, multitasking, signal & internet connection, streaming & browsing, and also picked the best magisk module for your Redmi 7A phone.
 </p>
@@ -133,6 +133,12 @@ _Terminal Emulator/Termux command:_
 - Fix wifi not working after flashing kernel and booted to system.
 
 ## Changelog
+
+### [Energizer_v1.2](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.2)
+- Move deleter for flush ram logs in flushram.
+- Optimize and fixed installation script.
+- Removed notification toast of Flush RAM to free more ram.
+- Some changes on system.prop.
 
 ### [Energizer_v1.1](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.1)
 - Added Cust Swap and move wifi fixes to v-k-s features.
