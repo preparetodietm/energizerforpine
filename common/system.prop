@@ -209,8 +209,8 @@ net.ipv6.conf.ppp0.disable_ipv6=1
 net.ipv6.conf.rmnet0.disable_ipv6=1
 net.ipv6.conf.sit0.disable_ipv6=1
 net.ipv6.conf.wlan0.disable_ipv6=1
-persist.telephony.support.ipv4=1
-persist.telephony.support.ipv6=0
+persist.telephony.support.ipv4=0
+persist.telephony.support.ipv6=1
 
 # Signal Performance
 net.ipv4.icmp_echo_ignore_all=0 
