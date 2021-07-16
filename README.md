@@ -15,7 +15,7 @@
 
 **FOR XIAOMI REDMI 7A (pine) DEVICES ONLY!**
 
-1. This module needs [Busybox for Android NDK](https://github.com/Magisk-Modules-Repo/busybox-ndk) in Magisk Manager or [Brutal Busybox](https://github.com/feravolt/Brutal_busybox) to worked on your Redmi 7A Phone.
+1. This module needs [Busybox for Android NDK](https://github.com/Magisk-Modules-Repo/busybox-ndk) in Magisk Manager or [Brutal Busybox](https://t.me/energizerforpine/2373) to worked on your Redmi 7A Phone.
 2. If you put some _tweaks_ on your **system/build.prop** similar to the features of Energizer, remove them and restart your device then install this module.
 3. Do not install any _Magisk Module_ related to the **features of Energizer**.
 
@@ -114,6 +114,9 @@
 **Cust Swap**
 - Turns your useless partition into swap partition and get extra 512mb.
 
+_Just ignore the issue of cust in recovery if you're using this feature._<br/>
+_To fix cust issue, make sure you uninstall the module or flash the module again without cust feature then flash [this](https://t.me/energizerforpine/2374) in recovery as cust image._
+
 **Double Wifi Bandwidth**
 - Doubles your wifi bandwith by modifying WNCSS_qcom_cfg.ini
 
@@ -135,7 +138,6 @@ _Terminal Emulator/Termux command:_
 ## Changelog
 
 ### [Energizer_v1.2](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.2)
-- Move deleter for flush ram logs in flushram.
 - Optimize and fixed installation script.
 - Removed notification toast of Flush RAM to free more ram.
 - Some changes on system.prop.
