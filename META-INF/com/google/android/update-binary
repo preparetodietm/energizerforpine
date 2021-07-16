@@ -18,9 +18,9 @@ busybox1() {
 	ui_print "- 𝐁𝐮𝐬𝐲𝐛𝐨𝐱 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝"
 	sleep 1
 	ui_print " 𝗡𝗮𝗺𝗲: 𝘽𝙪𝙨𝙮𝙗𝙤𝙭 𝙛𝙤𝙧 𝘼𝙣𝙙𝙧𝙤𝙞𝙙 𝙉𝘿𝙆 "
-	sleep 1
+	sleep 0.5
 	ui_print " 𝗔𝘂𝘁𝗵𝗼𝗿: 𝙤𝙨𝙢0𝙨𝙞𝙨 @ 𝙭𝙙𝙖-𝙙𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧𝙨 "
-	sleep 1
+	sleep 0.5
 }
 
 busybox2() {
@@ -28,9 +28,9 @@ busybox2() {
 	ui_print "- 𝐁𝐮𝐬𝐲𝐛𝐨𝐱 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝"
 	sleep 1
 	ui_print " 𝗡𝗮𝗺𝗲: 𝘽𝙧𝙪𝙩𝙖𝙡 𝘽𝙪𝙨𝙮𝙗𝙤𝙭 "
-	sleep 1
+	sleep 0.5
 	ui_print " 𝗔𝘂𝘁𝗵𝗼𝗿: 𝙁𝙚𝙧𝙖𝙑𝙤𝙡𝙩 "
-	sleep 1
+	sleep 0.5
 }
 
 imageless_magisk() {
@@ -76,17 +76,17 @@ fi
 done  
   ui_print " Selected: $RU "
   ui_print " "
-  sleep 1
+  sleep 0.5
   
 case $RU in
-  1 ) RU1=" "; rm -rf /data/adb/modules/dexopt-everything ; rm -rf /data/adb/modules/energizerforpine ; rm -rf /data/adb/modules/flushram ; rm -rf /data/adb/modules/fkm_spectrum_injector ; rm -rf /data/adb/modules/music-beta ; 
+  1 ) RU1=" "; rm -rf /data/adb/modules/dexopt-everything ; rm -rf /data/adb/modules/energizerforpine ; rm -rf /data/adb/modules/flushram ; rm -rf /data/adb/modules/fkm_spectrum_injector ; rm -rf /data/media/0/.weareravens ; rm -rf /data/media/0/weareravens.log ; 
   cd/ 
   imageless_magisk || unmount_magisk_img 
   $BOOTMODE || recovery_cleanup 
   rm -rf $TMPDIR $MOUNTPATH
   ui_print "✅ Module Uninstalled! Reboot Your Device Now!"
   exit 0 ;;
-  2 ) RU1=" "; ui_print "❌ Proceeding to Installation..." ; sleep 5 ; continue ;;
+  2 ) RU1=" "; ui_print "❌ Proceeding to Installation..." ; sleep 1 ; continue ;;
 esac 
 }
 
