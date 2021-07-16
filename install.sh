@@ -4,17 +4,6 @@
 #
 ##########################################################################################
 ##########################################################################################
-#
-# Instructions:
-#
-# 1. Place your files into system folder (delete the placeholder file)
-# 2. Fill in your module's info into module.prop
-# 3. Configure and implement callbacks in this file
-# 4. If you need boot scripts, add them into common/post-fs-data.sh or common/service.sh
-# 5. Add your additional or modified system properties into common/system.prop
-#
-##########################################################################################
-##########################################################################################
 # Config Flags
 ##########################################################################################
 # Set to true if you do *NOT* want Magisk to mount
@@ -35,7 +24,6 @@ LATESTARTSERVICE=true
 ##########################################################################################
 
 # List all directories you want to directly replace in the system
-# Check the documentations for more info why you would need this
 
 # Construct your list in the following format
 # This is an example
@@ -118,16 +106,13 @@ print_modname() {
   ui_print "************************************************************"
   ui_print "                    𝗘𝗻𝗲𝗿𝗴𝗶𝘇𝗲𝗿 𝗳𝗼𝗿 𝗥𝗲𝗱𝗺𝗶 𝟳𝗔⚡                  " 
   ui_print "                      by @𝐩𝐫𝐞𝐩𝐚𝐫𝐞𝐭𝐨𝐝𝐢𝐞𝐭𝐦                       "
-sleep 1
   ui_print " "
-  ui_print " #####  ##   #  #####  ####   #####  #  #####  #####  ####  "
-  ui_print " #      # #  #  #      #   #  #      #     #   #      #   # "
-  ui_print " ###    #  # #  ###    ###    #  ##  #    #    ###    ###   "
-  ui_print " #      #   ##  #      #  #   #   #  #   #     #      #  #  "
-  ui_print " #####  #    #  #####  #   #   ###   #  #####  #####  #   # "
-sleep 1 
+  ui_print "  ###    ####    ###    ###    ###   #  ####    ###    ###  "
+  ui_print " #      #    #  #      #   #  #      #     #   #      #   # "
+  ui_print " ###    #    #  ###    ###    # ##   #    #    ###    ###   "
+  ui_print " #      #    #  #      #  #   #   #  #   #     #      #  #  "
+  ui_print "  ###   #    #   ###   #   #   ###   #   ####   ###   #   # "
   ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟐 - 𝐬𝐭𝐚𝐛𝐥𝐞                      "
-sleep 1
   ui_print " "
   ui_print "                 Powered by 𝐌𝐚𝐠𝐢𝐬𝐤 (@𝐭𝐨𝐩𝐣𝐨𝐡𝐧𝐰𝐮)               "
   ui_print "************************************************************"
@@ -141,12 +126,11 @@ sleep 0.5
   ui_print " Build Type: Stable "
   ui_print " "
 sleep 0.5
-  ui_print " 𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐢𝐧𝐠 𝐄𝐧𝐞𝐫𝐠𝐢𝐳𝐞𝐫 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬... "
+  ui_print "- 𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐢𝐧𝐠 𝐄𝐧𝐞𝐫𝐠𝐢𝐳𝐞𝐫 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬... "
+sleep 2.5 
+  ui_print "𝐃𝐨𝐧𝐞: 𝑬𝒏𝒆𝒓𝒈𝒊𝒛𝒆𝒓 𝑭𝒆𝒂𝒕𝒖𝒓𝒆𝒔 𝑰𝒏𝒔𝒕𝒂𝒍𝒍𝒆𝒅!"
   ui_print " "
-sleep 5 
-  ui_print " 𝐃𝐨𝐧𝐞: 𝑬𝒏𝒆𝒓𝒈𝒊𝒛𝒆𝒓 𝑭𝒆𝒂𝒕𝒖𝒓𝒆𝒔 𝑰𝒏𝒔𝒕𝒂𝒍𝒍𝒆𝒅! "
-  ui_print " "
-sleep 3    
+sleep 0.5    
 }
 
 # Copy/extract your module files into $MODPATH in on_install.
@@ -157,7 +141,7 @@ on_install() {
   unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
   unzip -o "$ZIPFILE" 'Redmi-7A/*' -d $TMPDIR >&2
   ui_print "Done"
-  sleep 1
+  sleep 0.5
   
   # Callbacks
   DE=/data/adb/modules_update/dexopt-everything/
@@ -184,13 +168,10 @@ on_install() {
   ui_print " 𝑫𝒆𝒙𝒐𝒑𝒕 𝒊𝒔 𝒂 𝒔𝒚𝒔𝒕𝒆𝒎-𝒊𝒏𝒕𝒆𝒓𝒏𝒂𝒍 𝒕𝒐𝒐𝒍 𝒕𝒉𝒂𝒕 𝒊𝒔 𝒖𝒔𝒆𝒅 𝒕𝒐 𝒑𝒓𝒐𝒅𝒖𝒄𝒆 𝒐𝒑𝒕𝒊𝒎𝒊𝒛𝒆𝒅 𝒅𝒆𝒙 "
   ui_print " 𝒇𝒊𝒍𝒆𝒔 𝒃𝒚 𝒖𝒔𝒊𝒏𝒈 𝒔𝒖 -𝒄 𝒄𝒎𝒅 𝒑𝒂𝒄𝒌𝒂𝒈𝒆 𝒃𝒈-𝒅𝒆𝒙𝒐𝒑𝒕-𝒋𝒐𝒃 𝒄𝒐𝒅𝒆. "
   ui_print "*******************************************************"
-  ui_print " "  
-  sleep 5
-  
+  ui_print " "
   ui_print "================================================"
   ui_print " Do you want to install Dexopt Everything? "
   ui_print " "
-  sleep 5
   ui_print " 1. Yes, please 🤗 "
   ui_print " 2. No, skip it 😡 "
   ui_print " "
@@ -211,7 +192,7 @@ fi
 done  
   ui_print " Selected: $DE1 "
   ui_print " "
-  sleep 1
+  sleep 0.5
   
 case $DE1 in
   1 ) DE2="✅ Dexopt Everything Installed!"; mkdir -p $DE ; cp -f $TMPDIR/Redmi-7A/dexopt-everything/* $DE ;;
@@ -230,8 +211,6 @@ esac
   ui_print " 𝑻𝒖𝒓𝒏𝒔 𝒚𝒐𝒖𝒓 𝒖𝒔𝒆𝒍𝒆𝒔𝒔 𝒑𝒂𝒓𝒕𝒊𝒕𝒊𝒐𝒏 𝒊𝒏𝒕𝒐 𝒔𝒘𝒂𝒑 𝒑𝒂𝒓𝒕𝒊𝒕𝒊𝒐𝒏 𝒂𝒏𝒅 𝒈𝒆𝒕 𝒆𝒙𝒕𝒓𝒂 512𝒎𝒃. "
   ui_print "********************************************************"
   ui_print " "
-  sleep 5
-  
   ui_print "================================================"
   ui_print " Do you want to install Cust Swap? "
   ui_print " "
@@ -254,11 +233,11 @@ fi
 done  
   ui_print " Selected: $CS "
   ui_print " "
-  sleep 1
+  sleep 0.5
   
 case $CS in
-  1 ) CS1="✅ Cust Swap Installed!"; cp -f $TMPDIR/Redmi-7A/cust-swap/cust_swap $MODPATH ; $POSTFSDATA && cp -af $TMPDIR/Redmi-7A/cust-swap/cs-post.sh $MODPATH/cs-post.sh ; $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/cust-swap/cs-late.sh $MODPATH/cs-late.sh ;;
-  2 ) CS1="❌ Cust Swap Not Installed!"; continue ;;
+  1 ) CS1="✅ Cust Swap Installed!"; cp -f $TMPDIR/Redmi-7A/cust-swap/cust_swap $MODPATH ; sed -i 's/#2//g' $TMPDIR/service.sh ; sed -i 's/#CustSwap/# Cust Swap/g' $TMPDIR/service.sh ; sed -i 's/#CS_one/# Wait for boot to finish completely/g' $TMPDIR/service.sh ; sed -i 's+#CS_two+while [[ `getprop sys.boot_completed` -ne 1 ]]+g' $TMPDIR/service.sh ; sed -i 's/#CS_three/do/g' $TMPDIR/service.sh ; sed -i 's/#CS_four/sleep 1/g' $TMPDIR/service.sh ; sed -i 's+#CS_five+  mkswap /dev/block/by-name/cust > /dev/null+g' $TMPDIR/service.sh ; sed -i 's+#CS_six+  swapon /dev/block/by-name/cust > /dev/null+g' $TMPDIR/service.sh ; sed -i 's/#CS_seven/done/g' $TMPDIR/service.sh ; sed -i 's/#CS_eight//g' $TMPDIR/service.sh ; sed -i 's/#CS_nine/# Sleep an additional 90s to ensure init is finished/g' $TMPDIR/service.sh ; sed -i 's/#CS_ten/sleep 90/g' $TMPDIR/service.sh ; sed -i 's/#1//g' $TMPDIR/post-fs-data.sh ; sed -i 's/#CustSwap/# Cust Swap/g' $TMPDIR/post-fs-data.sh ; sed -i 's+#CS_one+mkswap /dev/block/by-name/cust > /dev/null+g' $TMPDIR/post-fs-data.sh ; sed -i 's+#CS_two+swapon /dev/block/by-name/cust > /dev/null+g' $TMPDIR/post-fs-data.sh ; sed -i 's/#CS_three/# by Flopster101/g' $TMPDIR/post-fs-data.sh ;;
+  2 ) CS1="❌ Cust Swap Not Installed!"; sed -i '/#2/d' $TMPDIR/service.sh ; sed -i '/#CustSwap/d' $TMPDIR/service.sh ; sed -i '/#CS_one/d' $TMPDIR/service.sh ; sed -i '/#CS_two/d' $TMPDIR/service.sh ; sed -i '/#CS_three/d' $TMPDIR/service.sh ; sed -i '/#CS_four/d' $TMPDIR/service.sh ; sed -i '/#CS_five 2>&1/d' $TMPDIR/service.sh ; sed -i '/#CS_six 2>&1/d' $TMPDIR/service.sh ; sed -i '/#CS_seven/d' $TMPDIR/service.sh ; sed -i '/#CS_eight/d' $TMPDIR/service.sh ; sed -i '/#CS_nine/d' $TMPDIR/service.sh ; sed -i '/#CS_ten/d' $TMPDIR/service.sh ; sed -i '/#1/d' $TMPDIR/post-fs-data.sh ; sed -i '/#CustSwap/d' $TMPDIR/post-fs-data.sh ; sed -i '/#CS_one 2>&1/d' $TMPDIR/post-fs-data.sh ; sed -i '/#CS_two 2>&1/d' $TMPDIR/post-fs-data.sh ; sed -i '/#CS_three/d' $TMPDIR/post-fs-data.sh ; continue ;;
 esac 
   ui_print " $CS1 "
   ui_print "================================================"
@@ -273,8 +252,6 @@ esac
   ui_print " 𝑫𝒐𝒖𝒃𝒍𝒆𝒔 𝒚𝒐𝒖𝒓 𝒘𝒊𝒇𝒊 𝒃𝒂𝒏𝒅𝒘𝒊𝒅𝒕𝒉 𝒃𝒚 𝒎𝒐𝒅𝒊𝒇𝒚𝒊𝒏𝒈 𝑾𝑪𝑵𝑺𝑺_𝒒𝒄𝒐𝒎_𝒄𝒇𝒈.𝒊𝒏𝒊 "
   ui_print "**************************************************"
   ui_print " "
-  sleep 5
-  
   ui_print "================================================"
   ui_print " Do you want to install Double Wifi Bandwidth? "
   ui_print " "
@@ -297,7 +274,7 @@ fi
 done  
   ui_print " Selected: $DWB1 "
   ui_print " "
-  sleep 1
+  sleep 0.5
   
 case $DWB1 in
   1 ) DWB2="✅ Double Wifi Bandwidth Installed!"; mkdir -p $DWB ; cp -f $TMPDIR/Redmi-7A/double-wifi-bandwidth/* $DWB ;;
@@ -318,9 +295,7 @@ esac
   ui_print " 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝 (𝒔𝒂𝒇𝒆) , 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝𝟮 (𝑨𝒈𝒈𝒓𝒆𝒔𝒔𝒊𝒗𝒆) , "
   ui_print " 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝𝟯 (𝑬𝒙𝒕𝒓𝒆𝒎𝒆) , or 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝4 (Most Extreme). "
   ui_print "********************************************************"
-  ui_print " " 
-  sleep 5
-  
+  ui_print " "
   ui_print "================================================"
   ui_print " Do you want to install Flush RAM? "
   ui_print " "
@@ -343,11 +318,11 @@ fi
 done  
   ui_print " Selected: $FR3 "
   ui_print " "
-  sleep 1
+  sleep 0.5
   
 case $FR3 in
-  1 ) FR4=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $flushram1 ; cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1 ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR1 ; mkdir -p $FR2 ; cp -f $TMPDIR/Redmi-7A/flushram1/files/* $FR2 ; $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/flushram/fr-late.sh $flushram/fr-late.sh ; ui_print "✅ Flush RAM Installed! Logs are located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
-  2 ) FR4=" "; ui_print "❌ Flush RAM Not Installed!" ; ui_print "================================================" ; continue ;;
+  1 ) FR4=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $flushram1 ; cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1 ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR1 ; mkdir -p $FR2 ; cp -f $TMPDIR/Redmi-7A/flushram1/files/* $FR2 ; sed -i 's/#3//g' $TMPDIR/service.sh ; sed -i 's/#FlushRAM/# Remove Flush RAM Logs after Booted/g' $TMPDIR/service.sh ; sed -i 's/#FR_one/sleep 90/g' $TMPDIR/service.sh ; sed -i 's/#FR_two/ /g' $TMPDIR/service.sh ; sed -i 's+#FR_three+if [ -f /data/adb/modules/flushram/module.prop ]; then+g' $TMPDIR/service.sh ; sed -i 's+#FR_four+  rm -rf "/data/media/0/weareravens.log"+g' $TMPDIR/service.sh ; sed -i 's+#FR_five+  rm -rf "/data/media/0/.weareravens/weareravens.log"+g' $TMPDIR/service.sh ; sed -i 's/#FR_six/fi/g' $TMPDIR/service.sh ; ui_print "✅ Flush RAM Installed! Logs are located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
+  2 ) FR4=" "; ui_print "❌ Flush RAM Not Installed!" ; sed -i '/#3/d' $TMPDIR/service.sh ; sed -i '/#FlushRAM/d' $TMPDIR/service.sh ; sed -i '/#FR_one/d' $TMPDIR/service.sh ; sed -i '/#FR_two/d' $TMPDIR/service.sh ; sed -i '/#FR_three/d' $TMPDIR/service.sh ; sed -i '/#FR_four/d' $TMPDIR/service.sh ; sed -i '/#FR_five/d' $TMPDIR/service.sh ; sed -i '/#FR_six/d' $TMPDIR/service.sh ; ui_print "================================================" ; continue ;;
 esac 
   ui_print " $FR4 "
   sleep 1
@@ -360,9 +335,7 @@ esac
   ui_print " "
   ui_print " 𝑨 𝒕𝒘𝒆𝒂𝒌𝒔 𝒇𝒐𝒓 𝒕𝒐𝒖𝒄𝒉𝒔𝒓𝒆𝒆𝒏 "𝒇𝒕𝒔_𝒕𝒔" 𝒇𝒐𝒓 𝑹𝒆𝒅𝒎𝒊 7𝑨 𝒅𝒆𝒗𝒊𝒄𝒆𝒔. "
   ui_print "*******************************************"
-  ui_print " " 
-  sleep 5
-  
+  ui_print " "
   ui_print "================================================"
   ui_print " Do you want to install Touchscreen Improvement? "
   ui_print " "
@@ -385,7 +358,7 @@ fi
 done  
   ui_print " Selected: $TI2 "
   ui_print " "
-  sleep 1
+  sleep 0.5
   
 case $TI2 in
   1 ) TI3="✅ Touchscreen Improvement Installed!"; mkdir -p $TI ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TI ; mkdir -p $TI1 ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TI1 ;;
@@ -405,8 +378,6 @@ esac
   ui_print " 𝑰𝒏𝒔𝒕𝒂𝒍𝒍 𝒐𝒏𝒍𝒚 𝒊𝒇 𝒚𝒐𝒖 𝒏𝒆𝒆𝒅 𝒊𝒕! "
   ui_print "***************************************************"
   ui_print " "
-  sleep 5
-  
   ui_print "================================================"
   ui_print " Do you want to install Wifi Fixes? "
   ui_print " "
@@ -429,11 +400,11 @@ fi
 done  
   ui_print " Selected: $WF "
   ui_print " "
-  sleep 1
+  sleep 0.5
   
 case $WF in
-  1 ) WF1="✅ Wifi Fixes Installed!"; cp -f $TMPDIR/Redmi-7A/wifi-fixes/wifi_fixes $MODPATH ; $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/wifi-fixes/wf-late.sh $MODPATH/wf-late.sh ;;
-  2 ) WF1="❌ Wifi Fixes Not Installed!"; continue ;;
+  1 ) WF1="✅ Wifi Fixes Installed!"; cp -f $TMPDIR/Redmi-7A/wifi-fixes/wifi_fixes $MODPATH ; sed -i 's/#1//g' $TMPDIR/service.sh ; sed -i 's/#WifiFixes/# Wifi Fixes/g' $TMPDIR/service.sh ; sed -i 's+#WF_one+if [ -e /sys/module/wlan/parameters/fwpath ]; then+g' $TMPDIR/service.sh ; sed -i 's+#WF_two+  echo "sta" > /sys/module/wlan/parameters/fwpath+g' $TMPDIR/service.sh ; sed -i 's/#WF_three/fi/g' $TMPDIR/service.sh ; sed -i 's/#WF_four/# by SdkPt/g' $TMPDIR/service.sh ;;
+  2 ) WF1="❌ Wifi Fixes Not Installed!"; sed -i '/#1/d' $TMPDIR/service.sh ; sed -i '/#WifiFixes/d' $TMPDIR/service.sh ; sed -i '/#WF_one/d' $TMPDIR/service.sh ; sed -i '/#WF_two/d' $TMPDIR/service.sh ; sed -i '/#WF_three/d' $TMPDIR/service.sh ; sed -i '/#WF_four/d' $TMPDIR/service.sh ; continue ;;
 esac 
   ui_print " $WF1 "
   ui_print "================================================"
@@ -483,7 +454,7 @@ fi
 done  
   ui_print " Selected: $DE1 "
   ui_print " "
-  sleep 1
+  sleep 0.5
   
 case $DE1 in
   1 ) DE2="✅ Dexopt Everything Executed!"; if [ -f /data/adb/modules/dexopt-everything/module.prop ]; then ui_print "- Executing Dexopt Everything..." ; su -c cmd package bg-dexopt-job ; fi ;;
@@ -501,9 +472,22 @@ if [ -e /data/adb/modules/energizerforpine/cust_swap ] || [ -f /data/adb/modules
     ui_print " "
     ui_print "✅ Cust Swap Already Installed!"
     cp -f $TMPDIR/Redmi-7A/cust-swap/cust_swap $MODPATH
-    $POSTFSDATA && cp -af $TMPDIR/Redmi-7A/cust-swap/cs-post.sh $MODPATH/cs-post.sh
-    $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/cust-swap/cs-late.sh $MODPATH/cs-late.sh
-    sleep 1
+    sed -i 's/#CustSwap/# Cust Swap/g' $TMPDIR/service.sh
+    sed -i 's/#CS_one/# Wait for boot to finish completely/g' $TMPDIR/service.sh 
+    sed -i 's+#CS_two+while [[ `getprop sys.boot_completed` -ne 1 ]]+g' $TMPDIR/service.sh
+    sed -i 's/#CS_three/do/g' $TMPDIR/service.sh
+    sed -i 's/#CS_four/sleep 1/g' $TMPDIR/service.sh
+    sed -i 's+#CS_five+  mkswap /dev/block/by-name/cust > /dev/null+g' $TMPDIR/service.sh
+    sed -i 's+#CS_six+  swapon /dev/block/by-name/cust > /dev/null+g' $TMPDIR/service.sh
+    sed -i 's/#CS_seven/done/g' $TMPDIR/service.sh
+    sed -i 's/#CS_eight//g' $TMPDIR/service.sh
+    sed -i 's/#CS_nine/# Sleep an additional 90s to ensure init is finished/g' $TMPDIR/service.sh
+    sed -i 's/#CS_ten/sleep 90/g' $TMPDIR/service.sh
+    sed -i 's/#CustSwap/# Cust Swap/g' $TMPDIR/post-fs-data.sh
+    sed -i 's+#CS_one+mkswap /dev/block/by-name/cust > /dev/null+g' $TMPDIR/post-fs-data.sh
+    sed -i 's+#CS_two+swapon /dev/block/by-name/cust > /dev/null+g' $TMPDIR/post-fs-data.sh
+    sed -i 's/#CS_three/# by Flopster101/g' $TMPDIR/post-fs-data.sh
+    sleep 0.5
     continue
 else
     run_cs
@@ -514,7 +498,7 @@ if [ -f /data/adb/modules/energizerforpine/system/vendor/etc/wifi/WCNSS_qcom_cfg
     ui_print "✅ Double Wifi Bandwidth Already Installed!"
     mkdir -p $DWB
     cp -f $TMPDIR/Redmi-7A/double-wifi-bandwidth/* $DWB
-    sleep 1
+    sleep 0.5
     continue
 else
     run_dwb
@@ -533,8 +517,14 @@ if [ -f /data/adb/modules/flushram/module.prop ] || [ -f /data/adb/modules/flush
     cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR1
     mkdir -p $FR2
     cp -f $TMPDIR/Redmi-7A/flushram1/files/* $FR2
-    $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/flushram/fr-late.sh $flushram/fr-late.sh
-    sleep 1
+    sed -i 's/#FlushRAM/# Remove Flush RAM Logs after Booted/g' $TMPDIR/service.sh
+    sed -i 's/#FR_one/sleep 90/g' $TMPDIR/service.sh
+    sed -i 's/#FR_two/ /g' $TMPDIR/service.sh
+    sed -i 's+#FR_three+if [ -f /data/adb/modules/flushram/module.prop ]; then+g' $TMPDIR/service.sh
+    sed -i 's+#FR_four+  rm -rf "/data/media/0/weareravens.log"+g' $TMPDIR/service.sh
+    sed -i 's+#FR_five+  rm -rf "/data/media/0/.weareravens/weareravens.log"+g' $TMPDIR/service.sh
+    sed -i 's/#FR_six/fi/g' $TMPDIR/service.sh
+    sleep 0.5
     continue
 else
     run_fr
@@ -546,7 +536,7 @@ if [ -f /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ] || [ -f /
     mkdir -p $TI
     cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TI
     mkdir -p $TI1 ; cp -f $TMPDIR/Redmi-7A/touchscreen-improvement/idc/* $TI1
-    sleep 1
+    sleep 0.5
     continue
 else
     run_ti
@@ -556,12 +546,22 @@ if [ -e /data/adb/modules/energizerforpine/wifi_fixes ]; then
     ui_print " "
     ui_print "✅ Wifi Fixes Already Installed!" 
     cp -f $TMPDIR/Redmi-7A/wifi-fixes/wifi_fixes $MODPATH
-    $LATESTARTSERVICE && cp -af $TMPDIR/Redmi-7A/wifi-fixes/wf-late.sh $MODPATH/wf-late.sh
-    sleep 1
+    sed -i 's/#WifiFixes/# Wifi Fixes/g' $TMPDIR/service.sh
+    sed -i 's+#WF_one+if [ -e /sys/module/wlan/parameters/fwpath ]; then+g' $TMPDIR/service.sh
+    sed -i 's+#WF_two+  echo "sta" > /sys/module/wlan/parameters/fwpath+g' $TMPDIR/service.sh
+    sed -i 's/#WF_three/fi/g' $TMPDIR/service.sh
+    sed -i 's/#WF_four/# by SdkPt/g' $TMPDIR/service.sh
+    sleep 0.5
     continue
 else
     run_wf
 fi
+
+if [ -e /data/adb/modules_update/energizerforpine/cust_swap ] || [ -f /data/adb/modules_update/flushram/module.prop ]; then
+    sed -i '41s/sleep 90//g' $TMPDIR/service.sh
+else
+    continue
+fi    
 
 ui_print " "
 }
