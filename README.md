@@ -1,14 +1,14 @@
 <h1 align="center"> Energizer for Redmi 7A ⚡<br/>
-<img src="https://img.shields.io/badge/Version-1.2-blue.svg">
+<img src="https://img.shields.io/badge/Version-1.3-blue.svg">
 </h1>
 <p align="center"><img src="https://github.com/preparetodietm/energizerforpine/blob/energizerforpine_v1.1/.github/energizer.gif">A collection of tweaks that can boosts your phone into a maximum level like a powerful lightning thunder ⚡ and gives you the best performance on gaming, multitasking, signal & internet connection, streaming & browsing, and also picked the best magisk module for your Redmi 7A phone.
 </p>
 
 ## The Best Partner Kernel of Energizer for Redmi 7A
-- [Lilac Kernel](https://github.com/dlwlrma123/kernel_lilac_sdm439) - [Download here](https://www.pling.com/p/1537597/)
+- [Lilac Kernel](https://github.com/dlwlrma123/kernel_lilac_sdm439) - [Download lilac stable kernel here](https://t.me/energizerforpine/2396)
 
 ## Requirements:
-- <img src="https://img.shields.io/badge/Android-9-brightgreen.svg"> <img src="https://img.shields.io/badge/Android-10-brightgreen.svg"> <img src="https://img.shields.io/badge/Android-11-brightgreen.svg">
+- <img src="https://img.shields.io/badge/Android-9-brightgreen.svg"> <img src="https://img.shields.io/badge/Android-10-brightgreen.svg"> <img src="https://img.shields.io/badge/Android-11-brightgreen.svg"> <img src="https://img.shields.io/badge/Android-12-brightgreen.svg">
 - <img src="https://img.shields.io/badge/Magisk-20.4%2B-00B39B.svg">
 
 ## Notes:
@@ -30,75 +30,17 @@
 
 ## Features:
 
-**Audio & Video Tweaks:**
+**Audio & Video Tweaks**<br/>
 
-- Better Call Voice Quality
-- Improves Video Recording Quality
-- Media Enhancer [codecs]
-- Stream Videos Faster
-- Video Acceleration Enabled
+**Battery Tweaks**<br/>
 
-**Battery Tweaks:**
-- Save More Battery Power
-- Smart Charging
+**CPU, GPU, FPS and Game Tweaks**<br/>
 
-**CPU, GPU, FPS and Game Tweaks:**
-- Control Gaming FPS
-- CPU & GPU Tweaks
-- Disable Dynamic Refresh Rate
-- Disable VSYNC for CPU Rendered Apps
-- Enable Game Colocation Feature
-- FPS 
-- FPS Stabilizer
-- FPS Tuner
-- Game Mode for CPU
-- Improve Gaming Experience
-- Surface Flinger
-- System FPS
+**Internet and Network Signal Tweaks**<br/>
 
-**Internet and Network Signal Tweaks:**
-- 4G and 3G Tweaks
-- Better Internet Speed
-- Better Network Signals
-- Boost Signal
-- Disable IPv6
-- Signal Performance
+**RAM Management and Multitasking Tweaks**<br/>
 
-**RAM Management and Multitasking Tweaks:**
-- Better RAM Management
-- Disable memplus prefetcher which ram-boost relying on, use traditional swapping
-- Free More RAM
-- Remain Launcher
-
-**Some Optimization Tweaks:**
-- 10bit Color Mode
-- Better Flashlight Intensity & Camera Flash Quality
-- Blurs
-- Camera
-- Camera2API
-- Charger
-- CnE
-- Data Modules
-- Disable Quality Control
-- DRM
-- Graphics Tweaks
-- Gyro
-- IMS
-- Kernel Tweaks
-- Keystore
-- Media
-- Optimization Tweaks
-- Performance Tweaks
-- Phone Call Ring Faster
-- Picture Quality Enhancer
-- QC framework value-adds
-- Qualcomm Tweaks
-- Radio
-- Sdcard Speed Tweaks
-- Smoothens UI
-- SOD Mode
-- System Tweaks
-- WFD
+**Some Optimization Tweaks**<br/>
 
 **Disable GPU Throttling as default**<br/>
 
@@ -123,11 +65,8 @@ _To fix cust issue, make sure you uninstall the module or flash the module again
 **Flush RAM**
 - Clear RAM apps caches, kill all apps, and force stop all apps to get more free RAM before playing games.
 
-_Terminal Emulator/Termux command:_
-- `su -c flush` (Safe Mode) - kill all running apps in backround.
-- `su -c flush2` (Aggressive Mode) - force stop all background & foreground 3rd party apps.        
-- `su -c flush3` (Extreme Mode) - force stop all backgrounds, foreground 3rd party, and system apps.
-- `su -c flush4` (Most Extreme Mode) - force stop all backgrounds and foreground apps from [config list](https://raw.githubusercontent.com/preparetodietm/energizerforpine/main/Redmi-7A/flushram1/log/weareravens_flush.conf).
+_Terminal Emulator/Termux command:_        
+- `su -c flush` - force stop all backgrounds, foreground 3rd party, and system apps.
 
 **Touchscreen Improvement**
 - A tweaks for touchsreen "fts_ts" for Redmi 7A devices.
@@ -136,6 +75,12 @@ _Terminal Emulator/Termux command:_
 - Fix wifi not working after flashing kernel and booted to system.
 
 ## Changelog
+
+### [Energizer_v1.3](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.3)
+- Added back flushram notification toast
+- Added RAM Management tweaks + optimized the script.
+- Remove unnecessary tweaks that caused ping hikes, lags, in games and improve ram management + default gpu is set to skia vulkan.
+- Support New Android 12 rom/gsi.
 
 ### [Energizer_v1.2](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.2)
 - Optimize and fixed installation script.
