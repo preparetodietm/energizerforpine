@@ -112,7 +112,7 @@ print_modname() {
   ui_print " ###    #    #  ###    ###    # ##   #    #    ###    ###   "
   ui_print " #      #    #  #      #  #   #   #  #   #     #      #  #  "
   ui_print "  ###   #    #   ###   #   #   ###   #   ####   ###   #   # "
-  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟐 - 𝐬𝐭𝐚𝐛𝐥𝐞                      "
+  ui_print "                      𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟑 - 𝐬𝐭𝐚𝐛𝐥𝐞                      "
   ui_print " "
   ui_print "                 Powered by 𝐌𝐚𝐠𝐢𝐬𝐤 (@𝐭𝐨𝐩𝐣𝐨𝐡𝐧𝐰𝐮)               "
   ui_print "************************************************************"
@@ -147,13 +147,30 @@ on_install() {
   DE=/data/adb/modules_update/dexopt-everything/
   DWB=$MODPATH/system/vendor/etc/wifi/
   flushram=/data/adb/modules_update/flushram/
-  flushram1=/data/adb/modules_update/fkm_spectrum_injector/
   FR=/data/adb/modules_update/flushram/system/bin/
-  FR1=/data/adb/modules_update/fkm_spectrum_injector/system/bin/
-  FR2=/data/media/0/.weareravens/
+  FR1=/data/adb/modules_update/flushram/system/priv-app/
+  RAM=su -c cat /proc/meminfo | grep MemTotal
   TI=$MODPATH/system/usr/idc/
   TI1=$MODPATH/system/vendor/usr/idc/
   
+  ram2gb() {
+  sed -i 's/#RAM_2or3/dalvik.vm.heapgrowthlimit=128m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_one/dalvik.vm.heapmaxfree=8m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_two/dalvik.vm.heapminfree=2m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_three/dalvik.vm.heapsize=256m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_four/dalvik.vm.heapstartsize=8m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_five/dalvik.vm.heaptargetutilization=0.75/g' $TMPDIR/system.prop
+  }
+  
+  ram3gb() { 	
+  sed -i 's/#RAM_2or3/dalvik.vm.heapgrowthlimit=256m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_one/dalvik.vm.heapmaxfree=8m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_two/dalvik.vm.heapminfree=512k/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_three/dalvik.vm.heapsize=512m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_four/dalvik.vm.heapstartsize=8m/g' $TMPDIR/system.prop
+  sed -i 's/#RAM_five/dalvik.vm.heaptargetutilization=0.75/g' $TMPDIR/system.prop
+  }
+
   run_detection() {
   ui_print " "	
   ui_print "- Detecting if other tweaks are installed..."
@@ -304,27 +321,27 @@ esac
   ui_print " "
   ui_print " Choose 1 or 2 "
 
-FR3=1
+FR2=1
 while true; do
-  ui_print " $FR3 "
+  ui_print " $FR2 "
 if $VKSEL; then
-  FR3=$((FR3 + 1))
+  FR2=$((FR2 + 1))
 else    
 break    
 fi
-if [ $FR3 -gt 2 ]; then
-  FR3=1
+if [ $FR2 -gt 2 ]; then
+  FR2=1
 fi
 done  
-  ui_print " Selected: $FR3 "
+  ui_print " Selected: $FR2 "
   ui_print " "
   sleep 0.5
   
-case $FR3 in
-  1 ) FR4=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $flushram1 ; cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1 ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR1 ; mkdir -p $FR2 ; cp -f $TMPDIR/Redmi-7A/flushram1/files/* $FR2 ; sed -i 's/#3//g' $TMPDIR/service.sh ; sed -i 's/#FlushRAM/# Remove Flush RAM Logs after Booted/g' $TMPDIR/service.sh ; sed -i 's/#FR_one/sleep 90/g' $TMPDIR/service.sh ; sed -i 's/#FR_two/ /g' $TMPDIR/service.sh ; sed -i 's+#FR_three+if [ -f /data/adb/modules/flushram/module.prop ]; then+g' $TMPDIR/service.sh ; sed -i 's+#FR_four+  rm -rf "/data/media/0/weareravens.log"+g' $TMPDIR/service.sh ; sed -i 's+#FR_five+  rm -rf "/data/media/0/.weareravens/weareravens.log"+g' $TMPDIR/service.sh ; sed -i 's/#FR_six/fi/g' $TMPDIR/service.sh ; ui_print "✅ Flush RAM Installed! Logs are located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
-  2 ) FR4=" "; ui_print "❌ Flush RAM Not Installed!" ; sed -i '/#3/d' $TMPDIR/service.sh ; sed -i '/#FlushRAM/d' $TMPDIR/service.sh ; sed -i '/#FR_one/d' $TMPDIR/service.sh ; sed -i '/#FR_two/d' $TMPDIR/service.sh ; sed -i '/#FR_three/d' $TMPDIR/service.sh ; sed -i '/#FR_four/d' $TMPDIR/service.sh ; sed -i '/#FR_five/d' $TMPDIR/service.sh ; sed -i '/#FR_six/d' $TMPDIR/service.sh ; ui_print "================================================" ; continue ;;
+case $FR2 in
+  1 ) FR3=" "; mkdir -p $flushram ; cp -f $TMPDIR/Redmi-7A/flushram/* $flushram ; mkdir -p $FR ; cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR ; mkdir -p $FR1 ; cp -f $TMPDIR/Redmi-7A/flushram/priv-app/* $FR1 ; sed -i 's/#3//g' $TMPDIR/service.sh ; sed -i 's/#FlushRAM/# Remove Flush RAM Logs after Booted/g' $TMPDIR/service.sh ; sed -i 's/#FR_two//g' $TMPDIR/service.sh ; sed -i 's+#FR_three+if [ -f /data/adb/modules/flushram/module.prop ]; then+g' $TMPDIR/service.sh ; sed -i 's+#FR_four+  rm -rf "/data/media/0/weareravens.log"+g' $TMPDIR/service.sh ; sed -i 's/#FR_five/fi/g' $TMPDIR/service.sh ; ui_print "✅ Flush RAM Installed! Logs are located in the" ; ui_print "/sdcard/weareravens.log everytime you used it." ; ui_print "================================================" ;;
+  2 ) FR3=" "; ui_print "❌ Flush RAM Not Installed!" ; sed -i '/#3/d' $TMPDIR/service.sh ; sed -i '/#FlushRAM/d' $TMPDIR/service.sh ; sed -i '/#FR_one/d' $TMPDIR/service.sh ; sed -i '/#FR_two/d' $TMPDIR/service.sh ; sed -i '/#FR_three/d' $TMPDIR/service.sh ; sed -i '/#FR_four/d' $TMPDIR/service.sh ; sed -i '/#FR_five/d' $TMPDIR/service.sh ; sed -i '/#FR_six/d' $TMPDIR/service.sh ; ui_print "================================================" ; continue ;;
 esac 
-  ui_print " $FR4 "
+  ui_print " $FR3 "
   sleep 1
 }
 
@@ -410,6 +427,12 @@ esac
   ui_print "================================================"
   sleep 1
 }
+
+if [ $RAM="MemTotal:        1876284 kB" ]; then
+    ram2gb
+else
+    ram3gb
+fi
 
   # Choose what features you want to be included on this module.
   . $TMPDIR/addon/Volume-Key-Selector/preinstall.sh
@@ -504,30 +527,31 @@ else
     run_dwb
 fi
 
-if [ -f /data/adb/modules/flushram/module.prop ] || [ -f /data/adb/modules/flushram1/module.prop ] ; then
+if [ -f /data/adb/modules/flushram/module.prop ]; then
     ui_print " "
     ui_print "✅ Flush RAM Already Installed!"
     mkdir -p $flushram
     cp -f $TMPDIR/Redmi-7A/flushram/* $flushram
-    mkdir -p $flushram1
-    cp -f $TMPDIR/Redmi-7A/flushram1/* $flushram1
     mkdir -p $FR
     cp -f $TMPDIR/Redmi-7A/flushram/bin/* $FR
     mkdir -p $FR1
-    cp -f $TMPDIR/Redmi-7A/flushram1/bin/* $FR1
-    mkdir -p $FR2
-    cp -f $TMPDIR/Redmi-7A/flushram1/files/* $FR2
+    cp -f $TMPDIR/Redmi-7A/flushram/priv-app/* $FR1
+    sed -i 's/#3//g' $TMPDIR/service.sh
     sed -i 's/#FlushRAM/# Remove Flush RAM Logs after Booted/g' $TMPDIR/service.sh
-    sed -i 's/#FR_one/sleep 90/g' $TMPDIR/service.sh
-    sed -i 's/#FR_two/ /g' $TMPDIR/service.sh
+    sed -i 's/#FR_two//g' $TMPDIR/service.sh
     sed -i 's+#FR_three+if [ -f /data/adb/modules/flushram/module.prop ]; then+g' $TMPDIR/service.sh
     sed -i 's+#FR_four+  rm -rf "/data/media/0/weareravens.log"+g' $TMPDIR/service.sh
-    sed -i 's+#FR_five+  rm -rf "/data/media/0/.weareravens/weareravens.log"+g' $TMPDIR/service.sh
-    sed -i 's/#FR_six/fi/g' $TMPDIR/service.sh
+    sed -i 's/#FR_five/fi/g' $TMPDIR/service.sh
     sleep 0.5
     continue
 else
     run_fr
+fi
+
+if [ -e /data/adb/modules_update/energizerforpine/cust_swap ]; then
+    sed -i '/#FR_one/d' $TMPDIR/service.sh 
+  else
+    sed -i 's/#FR_one/sleep 90/g' $TMPDIR/service.sh 
 fi
 
 if [ -f /data/adb/modules/energizerforpine/system/usr/idc/fts_ts.idc ] || [ -f /data/adb/modules/energizerforpine/system/vendor/usr/idc/fts_ts.idc ]; then 
@@ -557,12 +581,6 @@ else
     run_wf
 fi
 
-if [ -e /data/adb/modules_update/energizerforpine/cust_swap ] || [ -f /data/adb/modules_update/flushram/module.prop ]; then
-    sed -i '41s/sleep 90//g' $TMPDIR/service.sh
-else
-    continue
-fi    
-
 ui_print " "
 }
 
@@ -580,7 +598,6 @@ set_permissions() {
   # Flush RAM
   set_perm_recursive $flushram 0 0 0755 0644
   set_perm_recursive $flushram/system/bin 0 2000 0755 0755
-  set_perm_recursive $flushram1/system/bin 0 2000 0755 0755
   
   # Here are some examples:
   # set_perm_recursive  $MODPATH/system/lib       0     0       0755      0644
