@@ -43,7 +43,6 @@ fi
 #FR_three
 #FR_four
 #FR_five
-#FR_six
 
 #=========================================================
 # End of service.sh
