@@ -79,7 +79,7 @@ done
   sleep 0.5
   
 case $RU in
-  1 ) RU1=" "; rm -rf /data/adb/modules/dexopt-everything ; rm -rf /data/adb/modules/energizerforpine ; rm -rf /data/adb/modules/flushram ; rm -rf /data/adb/modules/fkm_spectrum_injector ; rm -rf /data/media/0/.weareravens ; rm -rf /data/media/0/weareravens.log ; 
+  1 ) RU1=" "; rm -rf /data/adb/modules/dexopt-everything ; rm -rf /data/adb/modules/energizerforpine ; rm -rf /data/adb/modules/flushram ; rm -rf /data/media/0/weareravens.log ; 
   cd/ 
   imageless_magisk || unmount_magisk_img 
   $BOOTMODE || recovery_cleanup 
