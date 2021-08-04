@@ -48,7 +48,7 @@
 
 **Set default lcd brightness to 4087**<br/>
 
-## Features in Volume-Key-Selector
+## Features in Volume-Key-Selector:
 
 **Dexopt Everything**
 - Dexopt is a system-internal tool that is used to produce optimized dex files by using `su -c cmd package bg-dexopt-job` code. 
@@ -74,11 +74,12 @@ _Terminal Emulator/Termux command:_
 **Wifi Fixes**
 - Fix wifi not working after flashing kernel and booted to system.
 
-## Changelog
+## Changelog:
 
 ### [Energizer_v1.3](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.3)
 - Added back flushram notification toast
 - Added RAM Management tweaks + optimized the script.
+- Remove flush ram 1, 2, and 4.
 - Remove unnecessary tweaks that caused ping hikes, lags, in games and improve ram management + default gpu is set to skia vulkan.
 - Support New Android 12 rom/gsi.
 
