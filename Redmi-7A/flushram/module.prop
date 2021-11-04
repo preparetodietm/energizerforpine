@@ -1,6 +1,0 @@
-id=flushram
-name=Flush RAM
-version=stable-version
-versionCode=10
-author=@WeAreRavenS
-description=Clear RAM cache and force stop all apps to get more free RAM before playing games. Use commands from Terminal Emulator/Termux 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝 (safe) , 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝𝟮 (Aggressive) , or 𝙨𝙪 -𝙘 𝙛𝙡𝙪𝙨𝙝𝟯 (Extreme).
