@@ -8,6 +8,9 @@ if [ -e /sys/class/kgsl/kgsl-3d0/throttling ]; then
   echo "0" > /sys/class/kgsl/kgsl-3d0/throttling
 fi
 
+# Disable UBWC for Graphics
+setprop debug.gralloc.gfx_ubwc_disable 1
+
 # Enable fast charging
 if [ -e /sys/kernel/fast_charge/force_fast_charge ]; then
   echo "1" > /sys/kernel/fast_charge/force_fast_charge
@@ -18,31 +21,15 @@ fi
 if [ -e /sys/class/leds/lcd-backlight/max_brightness ]; then
   echo "4087" > /sys/class/leds/lcd-backlight/max_brightness
 fi
+
+# Switch to Portable Interpreter
+echo dalvik.vm.execution-mode = int:portable >> /data/local.prop
 #1
 #WifiFixes
 #WF_one
 #WF_two
 #WF_three
 #WF_four
-#2
-#CustSwap
-#CS_one
-#CS_two
-#CS_three
-#CS_four
-#CS_five 2>&1
-#CS_six 2>&1
-#CS_seven
-#CS_eight
-#CS_nine
-#CS_ten
-#3
-#FlushRAM
-#FR_one
-#FR_two
-#FR_three
-#FR_four
-#FR_five
 
 #=========================================================
 # End of service.sh
