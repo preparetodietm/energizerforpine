@@ -60,9 +60,9 @@
 ## Changelog:
 
 ### [Energizer_v2.0](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v2.0)
-- Added Energizer command `su -c energizer` (New)
+- Added Energizer command `su -c energizer`
   - Added Boost Apps
-  - Added Gaming Mode (Added Vulkan) - under observation
+  - Added Gaming Mode
   - Added Misc
     - Dexopt Speed Profile
     - Boot Patcher
@@ -70,13 +70,13 @@
     - SR Changer (Screen Resolution Changer)
 - Added VoWifi, Volte, Smooth Streaming and other useful props
 - Cust Swap Removed
-- Dexopt Everything to Dexopt Speed Profile (New)
+- Dexopt Everything to Dexopt Speed Profile
 - Disable UBWC for Graphics
 - Fix UI Glitches and fully compatible to all android version
 - Flush Ram Removed
 - Improved Double Wifi Bandwidth script
 - Improved RAM Management Tweaks
-- Moved Dexopt Speed Profile in Energizer command (New)
+- Moved Dexopt Speed Profile in Energizer command
 - Optimized overall module scripts
 - Removed placebo props
 - Remove LMKD + Added Energizer Additional Tweaks from vendor build.prop
