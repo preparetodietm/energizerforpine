@@ -1,5 +1,4 @@
 #!/sbin/sh
-
 TMPDIR=/dev/tmp
 MOUNTPATH=/dev/magisk_img
 
@@ -7,50 +6,22 @@ MOUNTPATH=/dev/magisk_img
 umask 022
 
 # Initial cleanup
-rm -rf $TMPDIR 2>/dev/null
-mkdir -p $TMPDIR
+rm -rf "$TMPDIR" 2>/dev/null
+mkdir -p "$TMPDIR"
 
 # echo before loading util_functions
 ui_print() { echo "$1"; }
 
-busybox1() {
-	ui_print " "
-	ui_print "- 𝐁𝐮𝐬𝐲𝐛𝐨𝐱 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝"
-	sleep 1
-	ui_print " 𝗡𝗮𝗺𝗲: 𝘽𝙪𝙨𝙮𝙗𝙤𝙭 𝙛𝙤𝙧 𝘼𝙣𝙙𝙧𝙤𝙞𝙙 𝙉𝘿𝙆 "
-	sleep 0.5
-	ui_print " 𝗔𝘂𝘁𝗵𝗼𝗿: 𝙤𝙨𝙢0𝙨𝙞𝙨 @ 𝙭𝙙𝙖-𝙙𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧𝙨 "
-	sleep 0.5
-}
-
-busybox2() {
-	ui_print " "
-	ui_print "- 𝐁𝐮𝐬𝐲𝐛𝐨𝐱 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝"
-	sleep 1
-	ui_print " 𝗡𝗮𝗺𝗲: 𝘽𝙧𝙪𝙩𝙖𝙡 𝘽𝙪𝙨𝙮𝙗𝙤𝙭 "
-	sleep 0.5
-	ui_print " 𝗔𝘂𝘁𝗵𝗼𝗿: 𝙁𝙚𝙧𝙖𝙑𝙤𝙡𝙩 "
-	sleep 0.5
-}
-
 imageless_magisk() {
-    [ $MAGISK_VER_CODE -gt 20400 ]
-    return $?
-}
-
-please_install_busybox() {
-	ui_print "************************************************************"
-    ui_print "* Please Install Busybox for Android NDK in Magisk Manager *" 
-    ui_print "*           or Brutal Busybox on your device!              *"
-    ui_print "************************************************************"
-    exit 1
+  [ "$MAGISK_VER_CODE" -gt 20400 ]
+  return $?
 }
 
 require_new_magisk() {
-    ui_print "*********************************"
-    ui_print "* Please install Magisk v20.4+! *"
-    ui_print "*********************************"
-    exit 1
+  ui_print "*********************************"
+  ui_print "* Please install Magisk v20.4+! *"
+  ui_print "*********************************"
+  exit 1
 }
 
 run_uninstaller() {
@@ -61,55 +32,59 @@ run_uninstaller() {
   ui_print " 𝟐. 𝐍𝐨, 𝐏𝐫𝐨𝐜𝐞𝐞𝐝 𝐦𝐞 𝐭𝐨 𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐚𝐭𝐢𝐨𝐧 "
   ui_print " "
   ui_print " Choose 𝟏 or 𝟐 "
-  
-RU=1
-while true; do
-  ui_print " $RU "
-if $VKSEL; then
-  RU=$((RU + 1))
-else    
-break    
-fi
-if [ $RU -gt 2 ]; then
   RU=1
-fi
-done  
+  while true; do
+    ui_print " $RU "
+    if "$VKSEL"; then
+      RU="$((RU + 1))"
+    else
+      break
+    fi
+    if  [ "$RU" -gt 2 ]; then
+      RU=1
+    fi
+  done
   ui_print " Selected: $RU "
   ui_print " "
   sleep 0.5
-  
-case $RU in
-  1 ) RU1=" "; rm -rf /data/adb/modules/dexopt-everything ; rm -rf /data/adb/modules/energizerforpine ; rm -rf /data/adb/modules/flushram ; rm -rf /data/media/0/weareravens.log ; 
-  cd/ 
-  imageless_magisk || unmount_magisk_img 
-  $BOOTMODE || recovery_cleanup 
-  rm -rf $TMPDIR $MOUNTPATH
-  ui_print "✅ Module Uninstalled! Reboot Your Device Now!"
-  exit 0 ;;
-  2 ) RU1=" "; ui_print "❌ Proceeding to Installation..." ; sleep 1 ; continue ;;
-esac 
+  case "$RU" in
+    1) RU1=" "; rm -rf /data/adb/modules/energizerforpine ; rm -rf /data/media/0/Energizer ; rm -rf /data/local.prop ;
+    cd/
+    imageless_magisk || unmount_magisk_img
+    "$BOOTMODE" || recovery_cleanup
+    rm -rf "$TMPDIR" "$MOUNTPATH"
+    ui_print "✅ Module Uninstalled! Reboot Your Device Now!"
+    exit 0 ;;
+    2) RU1=" "; rm -rf /data/media/0/Energizer ; rm -rf /data/local.prop ; ui_print "❌ Proceeding to Installation..." ; ui_print " " ; sleep 1 ; continue ;;
+  esac
 }
 
 unzipping_files() {
-	ui_print " "
-	ui_print "- Unzipping Files, Please Wait... "
-	ui_print " "
-	sleep 5
+  ui_print "- Unzipping Files, Please Wait... "
+  sleep 5
 }
 
 ##########################################################################################
 # Environment
 ##########################################################################################
-
-OUTFD=$2
-ZIPFILE=$3
+PINE="$(getprop ro.product.vendor.device)"
+OUTFD="$2"
+ZIPFILE="$3"
 
 mount /data 2>/dev/null
+
+# Detect Redmi 7A Devices
+if [ "$PINE" == "pine" ]; then
+  continue
+else
+  ui_print "- This is for Xiaomi Redmi 7A only!"
+  abort
+fi
 
 # Load utility functions
 [ -f /data/adb/magisk/util_functions.sh ] || require_new_magisk
 . /data/adb/magisk/util_functions.sh
-[ $MAGISK_VER_CODE -lt 20400 ] && require_new_magisk
+[ "$MAGISK_VER_CODE" -lt 20400 ] && require_new_magisk
 
 # Preperation for flashable zips
 setup_flashable
@@ -121,52 +96,42 @@ mount_partitions
 api_level_arch_detect
 
 # Setup busybox and binaries
-$BOOTMODE && boot_actions || recovery_actions
+"$BOOTMODE" && boot_actions || recovery_actions
 
 ##########################################################################################
 # Preparation
 ##########################################################################################
-
 # Extract common files
-unzip -oj "$ZIPFILE" module.prop install.sh uninstall.sh 'common/*' -d $TMPDIR >&2
+unzip -oj "$ZIPFILE" module.prop install.sh uninstall.sh 'common/*' -d "$TMPDIR" >&2
+[ ! -f "$TMPDIR"/install.sh ] && abort "! Unable to extract zip file!"
 
 # Extract addon files
-unzip -o "$ZIPFILE" 'addon/*' -d $TMPDIR >&2
+unzip -o "$ZIPFILE" 'addon/*' -d "$TMPDIR" >&2
 
-[ ! -f $TMPDIR/install.sh ] && abort "! Unable to extract zip file!"
 # Load install script
-. $TMPDIR/install.sh
-
-if imageless_magisk; then
-    $BOOTMODE && MODDIRNAME=modules_update || MODDIRNAME=modules
-    MODULEROOT=$NVBASE/$MODDIRNAME
-else
-    $BOOTMODE && IMGNAME=magisk_merge.img || IMGNAME=magisk.img
-    IMG=$NVBASE/$IMGNAME
-    request_zip_size_check "$ZIPFILE"
-    mount_magisk_img
-    MODULEROOT=$MOUNTPATH
-fi
-
-MODID=`grep_prop id $TMPDIR/module.prop`
-MODPATH=$MODULEROOT/$MODID
+. "$TMPDIR"/install.sh
 
 # Module Uninstaller
 if [ -f /data/adb/modules/energizerforpine/module.prop ]; then
-    . $TMPDIR/addon/Volume-Key-Selector/uninstall.sh 
-    run_uninstaller
+  . "$TMPDIR"/addon/Volume-Key-Selector/uninstall.sh
+  run_uninstaller
 else
-    continue
+  continue
 fi
 
-# Busybox Detection
-if [ -f /data/adb/modules/busybox-ndk/module.prop ]; then
-    busybox1
-elif [ -f /data/adb/modules/busybox-brutal/module.prop ]; then
-    busybox2    
+if imageless_magisk; then
+  "$BOOTMODE" && MODDIRNAME=modules_update || MODDIRNAME=modules
+  MODULEROOT="$NVBASE"/"$MODDIRNAME"
 else
-    please_install_busybox
+  "$BOOTMODE" && IMGNAME=magisk_merge.img || IMGNAME=magisk.img
+  IMG="$NVBASE"/"$IMGNAME"
+  request_zip_size_check "$ZIPFILE"
+  mount_magisk_img
+  MODULEROOT="$MOUNTPATH"
 fi
+
+MODID=`grep_prop id "$TMPDIR"/module.prop`
+MODPATH="$MODULEROOT"/"$MODID"
 
 unzipping_files
 print_modname
@@ -174,46 +139,46 @@ print_modname
 ##########################################################################################
 # Install
 ##########################################################################################
-
 # Create mod paths
-rm -rf $MODPATH 2>/dev/null
-mkdir -p $MODPATH
+rm -rf "$MODPATH" 2>/dev/null
+mkdir -p "$MODPATH"
 
 on_install
 
 # Auto Mount
 if imageless_magisk; then
-    $SKIPMOUNT && touch $MODPATH/skip_mount
+  "$SKIPMOUNT" && touch "$MODPATH"/skip_mount
 else
-    $SKIPMOUNT || touch $MODPATH/auto_mount
+  "$SKIPMOUNT" || touch "$MODPATH"/auto_mount
 fi
 
 # prop files
-$PROPFILE && cp -af $TMPDIR/system.prop $MODPATH/system.prop
+"$PROPFILE" && cp -af "$TMPDIR"/system.prop "$MODPATH"/system.prop
 
 # Module info
-cp -af $TMPDIR/module.prop $MODPATH/module.prop
-if $BOOTMODE; then
-    # Update info for Magisk Manager
-    if imageless_magisk; then
-      mktouch $NVBASE/modules/$MODID/update
-      cp -af $TMPDIR/module.prop $NVBASE/modules/$MODID/module.prop
-    else
-      mktouch /sbin/.magisk/img/$MODID/update
-      cp -af $TMPDIR/module.prop /sbin/.magisk/img/$MODID/module.prop
-    fi
+cp -af "$TMPDIR"/module.prop "$MODPATH"/module.prop
+
+if "$BOOTMODE"; then
+  # Update info for Magisk Manager
+  if imageless_magisk; then
+    mktouch "$NVBASE"/modules/"$MODID"/update
+    cp -af "$TMPDIR"/module.prop "$NVBASE"/modules/"$MODID"/module.prop
+  else
+    mktouch /sbin/.magisk/img/"$MODID"/update
+    cp -af "$TMPDIR"/module.prop /sbin/.magisk/img/"$MODID"/module.prop
+  fi
 fi
 
 # post-fs-data mode scripts
-$POSTFSDATA && cp -af $TMPDIR/post-fs-data.sh $MODPATH/post-fs-data.sh
+"$POSTFSDATA" && cp -af "$TMPDIR"/post-fs-data.sh "$MODPATH"/post-fs-data.sh
 
 # service mode scripts
-$LATESTARTSERVICE && cp -af $TMPDIR/service.sh $MODPATH/service.sh
+"$LATESTARTSERVICE" && cp -af "$TMPDIR"/service.sh "$MODPATH"/service.sh
 
 # Handle replace folders
 for TARGET in $REPLACE; do
-    ui_print "- Replace target: $TARGET"
-    mktouch $MODPATH$TARGET/.replace
+  ui_print "- Replace target: "$TARGET""
+  mktouch "$MODPATH""$TARGET"/.replace
 done
 
 # Setting Permissions
@@ -221,18 +186,28 @@ ui_print "- Setting permissions"
 set_permissions
 ui_print "Done"
 
+# Finale
+finale
+sleep 5
+
 # Remove stuffs that don't belong to modules
 rm -rf \
-$MODPATH/.github $MODPATH/LICENSE $MODPATH/README.md $MODPATH/.gitattributes* 2>/dev/null
+"$MODPATH"/.github "$MODPATH"/LICENSE "$MODPATH"/README.md "$MODPATH"/.gitattributes* 2>/dev/null
 
 ##########################################################################################
 # Finalizing
 ##########################################################################################
-
 cd /
 imageless_magisk || unmount_magisk_img
-$BOOTMODE || recovery_cleanup
-rm -rf $TMPDIR $MOUNTPATH
+"$BOOTMODE" || recovery_cleanup
+rm -rf "$TMPDIR" $MOUNTPATH
 
+# Print Reboot Your Device Now
 ui_print "- ʀᴇʙᴏᴏᴛ Yᴏᴜʀ ᴅᴇᴠɪᴄᴇ ɴᴏᴡ! "
+ui_print " "
 exit 0
+
+#=========================================================
+# End of update-binary
+# Modified by @preparetodietm
+#=========================================================
