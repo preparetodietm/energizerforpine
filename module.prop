@@ -1,6 +1,6 @@
 id=energizerforpine
 name=Energizer for Redmi 7A⚡
-version=v2.0-stable
-versionCode=20
+version=v2.1-stable
+versionCode=21
 author=@preparetodietm
-description=A collection of tweaks that can boosts your phone into a maximum level like a powerful lightning thunder ⚡ and gives you the best performance on gaming, multitasking, signal & internet connection, streaming & browsing, and also picked the best magisk module for your Redmi 7A phone. Termux/Terminal Emulator Command: 𝙨𝙪 -𝙘 𝙚𝙣𝙚𝙧𝙜𝙞𝙯𝙚𝙧.
+description=A simple optimizer powered by lightning thunder ⚡ with a combination of fixes, tweaks, and have an additional features by using this command: 𝙨𝙪 -𝙘 𝙚𝙣𝙚𝙧𝙜𝙞𝙯𝙚𝙧 in Termux/Terminal Emulator designed for all Xiaomi Redmi 7A devices.
