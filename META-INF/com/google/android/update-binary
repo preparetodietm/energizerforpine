@@ -26,7 +26,7 @@ require_new_magisk() {
 
 run_uninstaller() {
   ui_print " "
-  ui_print " 𝗗𝗼 𝘆𝗼𝘂 𝘄𝗮𝗻𝘁 𝘁𝗼 𝘂𝗻𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗘𝗻𝗲𝗿𝗴𝗶𝘇𝗲𝗿 𝗳𝗼𝗿 𝗥𝗲𝗱𝗺𝗶 𝟳𝗔? "
+  ui_print " 𝗗𝗼 𝘆𝗼𝘂 𝘄𝗮𝗻𝘁 𝘁𝗼 𝘂𝗻𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗘𝗻𝗲𝗿𝗴𝗶𝘇𝗲𝗿 𝗳𝗼𝗿 𝗥𝗲𝗱𝗺𝗶 𝟳𝗔 ⚡? "
   ui_print " "
   ui_print " 𝟏. 𝐘𝐞𝐬, 𝐈 𝐰𝐚𝐧𝐭 𝐭𝐨 𝐔𝐧𝐢𝐧𝐬𝐭𝐚𝐥𝐥 𝐭𝐡𝐢𝐬 𝐌𝐨𝐝𝐮𝐥𝐞 "
   ui_print " 𝟐. 𝐍𝐨, 𝐏𝐫𝐨𝐜𝐞𝐞𝐝 𝐦𝐞 𝐭𝐨 𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐚𝐭𝐢𝐨𝐧 "
@@ -48,7 +48,7 @@ run_uninstaller() {
   ui_print " "
   sleep 0.5
   case "$RU" in
-    1) RU1=" "; rm -rf /data/adb/modules/energizerforpine ; rm -rf /data/media/0/Energizer ; rm -rf /data/local.prop ;
+    1) RU1=" "; rm -rf /data/adb/energizer ; rm -rf /data/adb/modules/energizerforpine ; rm -rf /data/media/0/Energizer ; rm -rf /data/local.prop ;
     cd/
     imageless_magisk || unmount_magisk_img
     "$BOOTMODE" || recovery_cleanup
@@ -64,9 +64,9 @@ unzipping_files() {
   sleep 5
 }
 
-##########################################################################################
+##############
 # Environment
-##########################################################################################
+##############
 PINE="$(getprop ro.product.vendor.device)"
 OUTFD="$2"
 ZIPFILE="$3"
@@ -98,9 +98,9 @@ api_level_arch_detect
 # Setup busybox and binaries
 "$BOOTMODE" && boot_actions || recovery_actions
 
-##########################################################################################
+##############
 # Preparation
-##########################################################################################
+##############
 # Extract common files
 unzip -oj "$ZIPFILE" module.prop install.sh uninstall.sh 'common/*' -d "$TMPDIR" >&2
 [ ! -f "$TMPDIR"/install.sh ] && abort "! Unable to extract zip file!"
@@ -136,9 +136,9 @@ MODPATH="$MODULEROOT"/"$MODID"
 unzipping_files
 print_modname
 
-##########################################################################################
+##########
 # Install
-##########################################################################################
+##########
 # Create mod paths
 rm -rf "$MODPATH" 2>/dev/null
 mkdir -p "$MODPATH"
@@ -194,9 +194,9 @@ sleep 5
 rm -rf \
 "$MODPATH"/.github "$MODPATH"/LICENSE "$MODPATH"/README.md "$MODPATH"/.gitattributes* 2>/dev/null
 
-##########################################################################################
+#############
 # Finalizing
-##########################################################################################
+#############
 cd /
 imageless_magisk || unmount_magisk_img
 "$BOOTMODE" || recovery_cleanup
@@ -207,7 +207,7 @@ ui_print "- ʀᴇʙᴏᴏᴛ Yᴏᴜʀ ᴅᴇᴠɪᴄᴇ ɴᴏᴡ! "
 ui_print " "
 exit 0
 
-#=========================================================
+#=============================
 # End of update-binary
 # Modified by @preparetodietm
-#=========================================================
+#=============================
