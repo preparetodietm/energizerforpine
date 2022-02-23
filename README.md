@@ -58,10 +58,10 @@
 - Doubles your wifi bandwith by modifying WNCSS_qcom_cfg.ini
 
 **Touchscreen Improvement**
-- A tweaks for touchsreen "fts_ts" for Redmi 7A devices.
+- It's a tweaks to improve "fts_ts" touchscreen panel only which is supported in Redmi 7A or any devices.
 
 **Wifi Fixes**
-- Fix wifi not working after flashing kernel and booted to system.
+- A fixes in broken Wifi issue which is caused by flashing a new kernel on old memeui vendor. 
 
 ## Changelog:
 
