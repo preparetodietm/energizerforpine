@@ -1,7 +1,7 @@
 <h1 align="center"> Energizer for Redmi 7A ⚡<br/>
-<img src="https://img.shields.io/badge/Version-2.0-blue.svg">
+<img src="https://img.shields.io/badge/Version-2.1-blue.svg">
 </h1>
-<p align="center"><img src="https://github.com/preparetodietm/energizerforpine/blob/energizerforpine_v1.1/.github/energizer.gif">A collection of tweaks that can boosts your phone into a maximum level like a powerful lightning thunder ⚡ and gives you the best performance on gaming, multitasking, signal & internet connection, streaming & browsing, and also picked the best magisk module for your Redmi 7A phone. Termux/Terminal Emulator Command: 𝙨𝙪 -𝙘 𝙚𝙣𝙚𝙧𝙜𝙞𝙯𝙚𝙧.
+<p align="center"><img src="https://github.com/preparetodietm/energizerforpine/blob/energizerforpine_v2.1/.github/energizer.gif">A simple optimizer powered by lightning thunder ⚡ with a combination of fixes, tweaks, and have an additional features by using this command: 𝙨𝙪 -𝙘 𝙚𝙣𝙚𝙧𝙜𝙞𝙯𝙚𝙧 in Termux/Terminal Emulator designed for all Xiaomi Redmi 7A devices.
 </p>
 
 ## Requirements:
@@ -23,7 +23,7 @@
 
 ## Features:
 
-**CPU, GPU, Graphics, and Game Tweaks**<br/>
+**Hardware and Game Tweaks**<br/>
 
 **Internet and Network Signal Tweaks**<br/>
 
@@ -33,13 +33,19 @@
 
 **Energizer Additional Tweaks**<br/>
 
-**Disable GPU Throttling as default**<br/>
+**Disable Skip Validate**<br/>
 
 **Disable UBWC for Graphics**<br/>
 
-**Enable Fast Charging**<br/>
+**Fix blue overlay when minimizing videos above 720p in YouTube**<br/>
 
-**Set default brightness to 4087**<br/>
+**Fix UI Glitches**<br/>
+
+**Fix UI Laggy**<br/>
+
+**Remove LMKD Props**<br/>
+
+**Enable Fast Charging**<br/>
 
 **Switch to Portable Interpreter**<br/>
 
@@ -58,6 +64,25 @@
 - Fix wifi not working after flashing kernel and booted to system.
 
 ## Changelog:
+
+### [Energizer_v2.1](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v2.1)
+- Update Energizer script (v2.0 to v2.1)
+  - Added HWUI Renderer Changer (Misc)
+    - HWUI Renderer Changer (New)
+  - Remove Vulkan & SkiaGL (Gaming Mode)
+  - Some changes on UI Interface
+- Added Disable Skip Validate
+- Added Fix blue overlay when minimizing videos above 720p in YouTube
+- Added Fix UI Laggy
+- Added New Energizer Description
+- Added smart detection for Energizer script
+- Fixed post-fs-data.sh and service.sh permissions
+- Fixed resetprop error in Magisk Manager logs
+- Fixed startup blackscreen after splash image
+- Fixed Switch to Portable Interpreter looping prop in service
+- Moved Dexopt Speed - Profile, Disable UBWC for Graphics, Energizer Additional Tweaks, Fix UI Glitches, Remove LMKD Props, in post-fs-data
+- Removed directly writing in system and vendor build.prop
+- Some changes in overall scripts
 
 ### [Energizer_v2.0](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v2.0)
 - Added Energizer command `su -c energizer`
@@ -83,36 +108,40 @@
 - Switch to Portable Interpreter
 
 ### [Energizer_v1.3](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.3)
-- Added back flushram notification toast
-- Added RAM Management tweaks + optimized the script.
-- Remove flush ram 1, 2, and 4.
-- Remove unnecessary tweaks that caused ping hikes, lags, in games and improve ram management + default gpu is set to skia vulkan.
-- Support New Android 12 rom/gsi.
+- Added back flushram notification toas
+- Added RAM Management tweaks + optimized the script
+- Remove flush ram 1, 2, and 4
+- Remove unnecessary tweaks that caused ping hikes, lags, in games and improve ram management + default gpu is set to skia vulkan
+- Support New Android 12 rom/gsi
 
 ### [Energizer_v1.2](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.2)
-- Optimize and fixed installation script.
-- Removed notification toast of Flush RAM to free more ram.
-- Some changes on system.prop.
+- Optimize and fixed installation script
+- Removed notification toast of Flush RAM to free more ram
+- Some changes on system.prop
 
 ### [Energizer_v1.1](https://github.com/preparetodietm/energizerforpine/commits/energizerforpine_v1.1)
-- Added Cust Swap and move wifi fixes to v-k-s features.
-- Added default lcd brightness.
-- Added deleter for flush ram logs.
-- Fix installation scripts.
-- Fix Touchscreen Improvement scripts.
-- Some changes on system.prop.
+- Added Cust Swap and move wifi fixes to v-k-s features
+- Added default lcd brightness
+- Added deleter for flush ram logs
+- Fix installation scripts
+- Fix Touchscreen Improvement scripts
+- Some changes on system.prop
 
 ### [Energizer_v1.0](https://github.com/preparetodietm/energizerforpine/tags)
-- Added Disable GPU Throttling to fix fps drop while playing games.
-- Added Enable Force Fast Charging. 
-- Added WIFI Fixes for Lilac Kernel which is not working on some GSI/ROM.
+- Added Disable GPU Throttling to fix fps drop while playing games
+- Added Enable Force Fast Charging
+- Added WIFI Fixes for Lilac Kernel which is not working on some GSI/ROM
 
 ## Credits:
 
 - [AkiraNoSushi](https://github.com/AkiraNoSushi) for his Enable Fast Charging Module
 - [dlwlrma123](https://github.com/dlwlrma123) for Giving Dexopt Everything(Changed now to Dexopt Speed Profile by me)
-- [SdkPt](http://t.me/SdkPpt) for his idea to fixed wifi
+- [Flopster101](https://t.me/Flopster101) for his Fix blue overlay when minimizing videos above 720p in YouTube
+- [KylieKyler](https://t.me/Kyliekyler) for helping me in some stuffs
+- [Mitsuki Shinboro 🇵🇭 #pine](https://t.me/leesungkyung32) and [hsxzerotwo](https://t.me/hsx02) for the Fix UI Laggy
+- [SdkPt](https://t.me/SdkptNewYear) for his idea to fixed wifi
 - [WeAreRavens](https://t.me/WeAreRavenS) for Touchscreen Improvement
+- [YuuhYemin](https://t.me/pfffffffft) for Testing and my solid pakner
 - To all Redmi 7A Testers and Community<br/>
 <br/>
 <p align="center">
@@ -121,5 +150,5 @@
 <a href="https://youtube.com/channel/UCbDEvgpYWmxK9uXhQ3-LtQw"><img src="https://img.shields.io/badge/YouTube-Channel-blue?logo=youtube&style=social"></a><br/>
 <br/>
 𝗘𝗻𝗲𝗿𝗴𝗶𝘇𝗲𝗿 𝗳𝗼𝗿 𝗥𝗲𝗱𝗺𝗶 𝟳𝗔 ⚡<br/>
-All Rights Reserved © 2021
+All Rights Reserved © 2021 - 2022
 </p>
